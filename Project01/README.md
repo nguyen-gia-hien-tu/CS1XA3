@@ -15,13 +15,19 @@
         * The idea on how to find a word in the last line of a file is from: https://unix.stackexchange.com/questions/213610/find-last-line-of-a-file-for-matching-string?rq=1
 
 ## Feature 03:
+    Description: This feature finds the latest commit that has the word "merge" in its commit message
+    Execution: Execute this feature by typing '3' when being asked for which feature to be executed.
     Reference: 
         * The idea on how to list the commit objects is taken from the Git Pro book: https://git-scm.com/docs/git-rev-list
 
-## Feature 04
+## Feature 04:
+    Description:
+    Execution:
     Reference:
         * https://www.cyberciti.biz/faq/linux-ls-command-sort-by-file-size/
 
 ## Feature 05:
+    Description:
+    Execution:
     Reference:
         https://www.2daygeek.com/how-to-count-files-by-extension-in-linux/
