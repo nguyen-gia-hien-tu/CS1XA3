@@ -1,9 +1,9 @@
 # CS 1XA3 Project01 - tun1
 
 ## USAGE
-   Execute the script from the project root with:
-	*chmod +x CS1XA3/Project01/project_analyze.sh
-        *./CS1XA3/Project01/project_analyze.sh
+   Execute the script from the project root with:<br/>
+	* chmod +x CS1XA3/Project01/project_analyze.sh
+        * ./CS1XA3/Project01/project_analyze.sh
    *Note:* You don't need to type in any argument, after executing the script, there will be user prompt guiding to the next steps 
 
 ## Feature 01
