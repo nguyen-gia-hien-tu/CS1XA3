@@ -11,5 +11,17 @@
 ## Feature 02: FIXME Log
     Description:
     Execution:
-    Reference: t
+    Reference: 
         * The idea on how to find a word in the last line of a file is from: https://unix.stackexchange.com/questions/213610/find-last-line-of-a-file-for-matching-string?rq=1
+
+## Feature 03:
+    Reference: 
+        * The idea on how to list the commit objects is taken from the Git Pro book: https://git-scm.com/docs/git-rev-list
+
+## Feature 04
+    Reference:
+        * https://www.cyberciti.biz/faq/linux-ls-command-sort-by-file-size/
+
+## Feature 05:
+    Reference:
+        https://www.2daygeek.com/how-to-count-files-by-extension-in-linux/
