@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Feature 01: Script Input
+clear
 echo "Feature 1: Script Input"
 echo "Feature 2: FIXME Log"
 echo "Feature 3: Checkout Latest Merge"
@@ -10,17 +11,18 @@ echo "Feature 6: Find Tag"
 echo "Feature 7: Switch to Executable"
 
 read -p "Enter the feature to be executed (this is Feature 1): " num_fea
+if [[ $num_fea -eq 6 ]] || [[ $num_fea -eq 7 ]]  ; then
+    echo "Sorry, this feature is not implemented yet :("
+fi
 
 # Feature 02: FIXME Log
 echo -n > fixme.log
 if [[ $num_fea -eq 2 ]] ; then
-    for item in ./** ; do
-        if [[ -f "$item" ]] ; then
+    for item in $(find . -type f) ; do
             last_line=$(tail -n 1 "$item")
             if [[ $last_line == *"#FIXME"* ]] ; then
                 echo "$item" >> fixme.log
             fi
-        fi
     done
 fi
 
