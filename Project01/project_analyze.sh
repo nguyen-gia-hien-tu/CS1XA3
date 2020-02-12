@@ -1,20 +1,25 @@
 #!/bin/bash
 
 # Feature 01: Script Input
-read -p "Enter the feature to be executed: " num_fea
+echo "Feature 1: Script Input"
+echo "Feature 2: FIXME Log"
+echo "Feature 3: Checkout Latest Merge"
+echo "Feature 4: File Size List"
+echo "Feature 5: File Type Count"
+echo "Feature 6: Find Tag"
+echo "Feature 7: Switch to Executable"
+
+read -p "Enter the feature to be executed (this is Feature 1): " num_fea
 
 # Feature 02: FIXME Log
+echo -n > fixme.log
 if [[ $num_fea -eq 2 ]] ; then
-    if [! -f fixme.log ] ; then
-                touch fixme.log
-    else:
-        echo > fixme.log
-    fi
-
-    for item in ./* ; do
-        last_line=$(tail -n 1 "$item")
-        if [[ $last_line == *"#FIXME"* ]] ; then
-            echo "$item" >> fixme.log
+    for item in ./** ; do
+        if [[ -f "$item" ]] ; then
+            last_line=$(tail -n 1 "$item")
+            if [[ $last_line == *"#FIXME"* ]] ; then
+                echo "$item" >> fixme.log
+            fi
         fi
     done
 fi
@@ -25,7 +30,7 @@ if [[ $num_fea -eq 3 ]] ; then
 fi
 
 # Feature 04: File Size List
-if [[ $num_fea -eq 4]] ; then
+if [[ $num_fea -eq 4 ]] ; then
     find . -type f | xargs ls -lSh 
 fi
 
