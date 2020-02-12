@@ -1,12 +1,12 @@
 # CS 1XA3 Project01 - tun1
 
 ## USAGE
-Access to the folder `/home/tun1/private/CS1XA3/Project01` using `cd` command
-<br>
-Execute the script from the project root with:
-* chmod +x CS1XA3/Project01/project_analyze.sh
-* ./CS1XA3/Project01/project_analyze.sh
-<br>
+<!--Access to the folder `/home/tun1/private/CS1XA3/Project01` using `cd` command-->
+
+Execute the script from the project root (execute the script when you are at the `CS1XA3` folder) with:
+* chmod +x Project01/project_analyze.sh
+* Project01/project_analyze.sh
+
 You need to run the script again to test another feature
    
 **Note:** 
