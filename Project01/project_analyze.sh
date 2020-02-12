@@ -44,6 +44,6 @@ fi
 # Feature 05: File Type Count
 if [[ num_fea -eq 5 ]] ; then
     read -p "Enter the extension to find how many files with that extension: " file_ext
-    num_file=$(ls -alR | grep ".*\.$file_ext$" | wc -l)
+    num_file=$(ls . -alR | grep ".*\.$file_ext$" | wc -l)
     echo "There are $num_file files with that extension"
 fi

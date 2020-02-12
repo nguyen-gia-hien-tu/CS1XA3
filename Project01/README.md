@@ -1,13 +1,17 @@
 # CS 1XA3 Project01 - tun1
 
 ## USAGE
-   Execute the script from the project root with:
-   * chmod +x CS1XA3/Project01/project_analyze.sh
-   * ./CS1XA3/Project01/project_analyze.sh
+Access to the folder `/home/tun1/private/CS1XA3/Project01` using `cd` command
+<br>
+Execute the script from the project root with:
+* chmod +x CS1XA3/Project01/project_analyze.sh
+* ./CS1XA3/Project01/project_analyze.sh
+<br>
+You need to run the script again to test another feature
    
-   **Note:** 
-   * You don't need to type in any argument, after executing the script, there will be user prompt guiding to the next steps
-   * Enter 1, 2, 3,... corresponding to the feature you want to execute
+**Note:** 
+* You don't need to type in any argument, after executing the script, there will be user prompt guiding to the next steps
+* Enter 1, 2, 3,... corresponding to the feature you want to execute
 
 ## Feature 2: FIXME Log
     Description: This feature finds every file in the repository folder and subfolders and put a list of the file names in CS1XA3/Project01/fixme.log
@@ -31,4 +35,4 @@
     Description: This feature asks the user to enter an extension and outputs the number of files in the repo with that extension
     Execution: Execute this feature by typing "5" when you are prompted with the statement "Enter the feature to be executed (this is Feature 1): "
     Reference:
-        https://www.2daygeek.com/how-to-count-files-by-extension-in-linux/
+        The idea on how to count files by extension is from: https://www.2daygeek.com/how-to-count-files-by-extension-in-linux/
