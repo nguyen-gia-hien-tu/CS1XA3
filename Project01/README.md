@@ -6,16 +6,16 @@
    * ./CS1XA3/Project01/project_analyze.sh
    
    **Note:** 
-   * You don't need to type in any argument, after executing the script, there will be user prompt guiding to the next steps 
+   * You don't need to type in any argument, after executing the script, there will be user prompt guiding to the next steps
     * Enter 1, 2, 3,... corresponding to the feature you want to execute
 
 ## Feature 1
 
 ## Feature 2: FIXME Log
-    Description: This feature finds every file in the repository folder and subfolders and put a list of the file names in CS1XA3/Project01/fixme.log
-    Execution: Execute this feature by typing `2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
-    Reference: 
-        * The idea on how to find a word in the last line of a file is from: https://unix.stackexchange.com/questions/213610/find-last-line-of-a-file-for-matching-string?rq=1
+Description: This feature finds every file in the repository folder and subfolders and put a list of the file names in CS1XA3/Project01/fixme.log
+Execution: Execute this feature by typing `2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
+Reference: 
+    * The idea on how to find a word in the last line of a file is from: https://unix.stackexchange.com/questions/213610/find-last-line-of-a-file-for-matching-string?rq=1
 
 ## Feature 3: Checkout Latest Merge
     Description: This feature finds the latest commit that has the word "merge" in its commit message
