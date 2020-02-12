@@ -21,8 +21,8 @@ if [[ $num_fea -eq 6 ]] || [[ $num_fea -eq 7 ]]  ; then
 fi
 
 # Feature 02: FIXME Log
-echo -n > fixme.log
 if [[ $num_fea -eq 2 ]] ; then
+    echo -n > fixme.log
     for item in $(find . -type f) ; do
             last_line=$(tail -n 1 "$item")
             if [[ $last_line == *"#FIXME"* ]] ; then
