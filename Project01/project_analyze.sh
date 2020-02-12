@@ -9,10 +9,15 @@ echo "Feature 4: File Size List"
 echo "Feature 5: File Type Count"
 echo "Feature 6: Find Tag"
 echo "Feature 7: Switch to Executable"
+echo ""
 
-read -p "Enter the feature to be executed (this is Feature 1): " num_fea
+num_fea=1
+while [ $num_fea -eq 1 ] ; do
+    read -p "Enter the feature to be executed (this is Feature 1): " num_fea
+done
+
 if [[ $num_fea -eq 6 ]] || [[ $num_fea -eq 7 ]]  ; then
-    echo "Sorry, this feature is not implemented yet :("
+    echo "Sorry, this feature has not been implemented yet :("
 fi
 
 # Feature 02: FIXME Log
@@ -33,11 +38,12 @@ fi
 
 # Feature 04: File Size List
 if [[ $num_fea -eq 4 ]] ; then
-    find . -type f | xargs ls -lSh 
+    find . -type f | xargs ls -lSh
 fi
 
 # Feature 05: File Type Count
 if [[ num_fea -eq 5 ]] ; then
     read -p "Enter the extension to find how many files with that extension: " file_ext
-    ls -lR | grep ".$file_ext" | wc -l
+    num_file=$(ls -alR | grep ".*\.$file_ext$" | wc -l)
+    echo "There are $num_file files with that extension"
 fi
