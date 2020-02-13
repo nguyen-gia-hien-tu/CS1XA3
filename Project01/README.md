@@ -4,8 +4,8 @@
 <!--Access to the folder `/home/tun1/private/CS1XA3/Project01` using `cd` command-->
 
 Execute the script from the project root (execute the script when you are at the `CS1XA3` folder) with:
-* `chmod +x CS1XA3/Project01/project_analyze.sh`
-* `./CS1XA3/Project01/project_analyze.sh`
+* `chmod +x ./Project01/project_analyze.sh`
+* `./Project01/project_analyze.sh`
 
 You need to run the script again to test another feature
    
