@@ -11,25 +11,27 @@ You need to run the script again to test another feature
    
 **Note:** 
 * You don't need to type in any argument, after executing the script, there will be user prompt guiding to the next steps
-* Enter 1, 2, 3,... corresponding to the feature you want to execute
+* Enter `1`, `2`, `3`, or `4` corresponding to the feature you want to execute
+* You will need to enter the number correctly or the script won't run anything feature
 
 ## Feature 2: FIXME Log
 * Description: 
-    * This feature finds every file in the repository folder and subfolders and put a list of the file names in CS1XA3/Project01/fixme.log
+    * This feature finds every file in the repository folder and sub-folders and put a list of the file names in `CS1XA3/Project01/fixme.log`
     * The feature will ignore `.git` directory
 * Execution: Execute this feature by typing `2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * Reference: 
     * The idea on how to find a word in the last line of a file is from: https://unix.stackexchange.com/questions/213610/find-last-line-of-a-file-for-matching-string?rq=1
+    * The idea on how to ignore a directory with `find` command is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
 
 ## Feature 3: Checkout Latest Merge
-* Description: This feature finds the latest commit that has the word "merge" in its commit message
+* Description: This feature finds the latest commit that has the word `merge` (case insensitive) in its commit message
 * Execution: Execute this feature by typing `3` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * Reference: 
     * The idea on how to list the commits is from the Git Pro book: https://git-scm.com/docs/git-rev-list
 
 ## Feature 4: File Size List
 * Description: 
-    * This feature lists all files in the repo and their sizes in human readable format from largest to smallest
+    * This feature lists all files in the repo (repo folder and its sub-folders) and their sizes in human readable format from largest to smallest
     * The feature will ignore any files in the `.git` directory
 * Execution: Execute this feature by typing `4` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * Reference:

@@ -6,7 +6,6 @@ echo "Feature 1: Script Input"
 echo "Feature 2: FIXME Log"
 echo "Feature 3: Checkout Latest Merge"
 echo "Feature 4: File Size List"
-echo "Feature 5: File Type Count"
 echo ""
 
 num_fea=1
