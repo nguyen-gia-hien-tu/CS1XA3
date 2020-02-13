@@ -27,7 +27,7 @@ fi
 
 # Feature 03: Checkout Latest Merge
 if [[ $num_fea -eq 3 ]] ; then
-    git checkout $(git rev-list --grep=merge HEAD -1)
+    git checkout $(git rev-list -i --grep=merge HEAD -1)
 fi
 
 # Feature 04: File Size List
@@ -41,4 +41,3 @@ if [[ num_fea -eq 5 ]] ; then
     num_file=$(ls . -alR | grep ".*\.$file_ext$" | wc -l)
     echo "There are $num_file files with that extension"
 fi
-
