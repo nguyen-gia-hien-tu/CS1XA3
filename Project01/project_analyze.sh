@@ -41,3 +41,4 @@ if [[ num_fea -eq 5 ]] ; then
     num_file=$(ls . -alR | grep ".*\.$file_ext$" | wc -l)
     echo "There are $num_file files with that extension"
 fi
+#
