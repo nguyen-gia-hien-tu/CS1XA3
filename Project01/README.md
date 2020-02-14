@@ -40,14 +40,6 @@ You need to run the script again to test another feature
     * The idea on how to use `ls` to list in human readable format and sort from largest to smallest is from: https://www.cyberciti.biz/faq/linux-ls-command-sort-by-file-size/
     * The idea on how to ignore a directory (specigically `.git` directory) is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
 
-<!--
-## Feature 5:
-* Description: This feature asks the user to enter an extension and outputs the number of files in the repo with that extension
-* Execution: Execute this feature by typing `5` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
-* Reference:
-    * The idea on how to count files by extension is from: https://www.2daygeek.com/how-to-count-files-by-extension-in-linux/
--->
-
 ## Custom Feature 1: Organize Files
 * __Description:__
     * This feature asks the user to choose __Organize__ or __Unorganize__
@@ -71,5 +63,3 @@ You need to run the script again to test another feature
         * At least 1 lower case letter
         * At least 1 number from 0-9
 * __Execution:__ Execute the feature by typing `CF2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
-
-    
