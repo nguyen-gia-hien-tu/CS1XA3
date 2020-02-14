@@ -7,16 +7,19 @@
 * `./Project01/project_analyze.sh`
    
 **Note:** 
-* You don't need to type in any argument, after executing the script, there will be user prompt guiding to the next steps
+* You don't need to type in any argument, after executing the script, there will be user prompt asking you to enter which feature you want to execute
 * Enter __1__, __2__, __3__, or __4__ corresponding to the feature you want to execute
 * You will need to enter the number correctly or the script won't run anything feature
 * You need to run the script again to test another feature
+
+## Feature 1: Script Input
+This feature is described in the `USAGE` section above
 
 ## Feature 2: FIXME Log
 * __Description:__ 
     * This feature finds every file in the repository folder (`CS1XA3` folder) and its sub-folders that has the word `#FIXME` (case sensitive) in the last line and put a list of the file names in `CS1XA3/Project01/fixme.log`
     * The feature will ignore `.git` directory
-* __Execution:__ Execute this feature by typing __2__ when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
+* __Execution:__ Execute this feature by typing `2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__ 
     * The idea on how to check if a string contains a specific word is from: https://stackoverflow.com/questions/229551/how-to-check-if-a-string-contains-a-substring-in-bash
     * The idea on how to ignore a directory with `find` command is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
@@ -26,7 +29,7 @@
 * __Description:__ 
     * This feature checkouts the latest commit that has the word `merge` (case insensitive) in its commit message
     * __You need to commit all your changes before executing this feature__
-* __Execution:__ Execute this feature by typing __3__ when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
+* __Execution:__ Execute this feature by typing `3` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__ 
     * The idea on how to list the commits is from the Pro Git book: https://git-scm.com/docs/git-rev-list
 
@@ -35,7 +38,7 @@
 * __Description:__ 
     * This feature lists all files in the repo (`CS1XA3` folder and its sub-folders) and their sizes in human readable format sorted from largest to smallest
     * The feature will ignore any files in the `.git` directory
-* __Execution:__ Execute this feature by typing __4__ when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
+* __Execution:__ Execute this feature by typing `4` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to use `ls` to list in human readable format and sort from largest to smallest is from: https://www.cyberciti.biz/faq/linux-ls-command-sort-by-file-size/
     * The idea on how to ignore a directory with `find` command is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
@@ -54,7 +57,7 @@
 * __Desciption:__ 
     * The script will find every file ends with `.txt` and has the word `Password: ` in it
     * It will then check if the word follows the word `Password: ` is a good password or not
-    * The script will output to the `CS1XA3/Project01/password.log` file (it will create the `password.log` file if it doesn't exist, overwrite if it does) the name of the __file__ in which the password is not good, the password and recommend what is missing to be a good password
+    * The script will output to the `CS1XA3/Project01/password.log` file (it will create the `password.log` file if it doesn't exist, overwrite if it does) __the name of the file__ in which the password is not good, __the password__ and __recommend__ what is missing to be a good password
     * If the `.txt` file has multiple passwords, the script will output the recommendation to be a good password corresponding to each password
 
     * __Notes:__ Please consider a good password is a password that has:
