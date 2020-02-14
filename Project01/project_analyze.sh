@@ -15,11 +15,12 @@ done
 
 # Feature 02: FIXME Log
 if [[ $num_fea -eq 2 ]] ; then
-    echo -n > fixme.log
-    for item in $(find . -type f -not -iwholename "*.git*") ; do
+    echo -n > ./Project01/fixme.log
+    find . -type f -not -iwholename "*.git*" -print0 | while IFS= read -d '' item 
+    do
             last_line=$(tail -n 1 "$item")
-            if [[ $last_line == *"#FIXME"* ]] ; then
-                echo "$item" >> fixme.log
+            if [[ "$last_line" == *"#FIXME"* ]] ; then
+                echo "$item" >> ./Project01/fixme.log
             fi
     done
 fi
