@@ -18,7 +18,7 @@
     * The feature will ignore `.git` directory
 * __Execution:__ Execute this feature by typing __2__ when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__ 
-    * The idea on how to find a word in the last line of a file is from: https://unix.stackexchange.com/questions/213610/find-last-line-of-a-file-for-matching-string?rq=1
+    * The idea on how to check if a string contains a specific word is from: https://stackoverflow.com/questions/229551/how-to-check-if-a-string-contains-a-substring-in-bash
     * The idea on how to ignore a directory with `find` command is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
 
 
