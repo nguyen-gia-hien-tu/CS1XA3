@@ -1,20 +1,20 @@
 # CS 1XA3 Project01 - tun1
 
 ## USAGE
-Execute the script from the project root (i.e. execute the script when you are at the `CS1XA3` folder) with:
+1. Use the `cd` command to get into the `CS1XA3` folder
+2. Execute the script from the project root (i.e. execute the script when you are in the `CS1XA3` folder) with:
 * `chmod +x ./Project01/project_analyze.sh`
 * `./Project01/project_analyze.sh`
-
-You need to run the script again to test another feature
    
 **Note:** 
 * You don't need to type in any argument, after executing the script, there will be user prompt guiding to the next steps
 * Enter __1__, __2__, __3__, or __4__ corresponding to the feature you want to execute
 * You will need to enter the number correctly or the script won't run anything feature
+* You need to run the script again to test another feature
 
 ## Feature 2: FIXME Log
 * __Description:__ 
-    * This feature finds every file in the repository folder (`CS1XA3` folder) and its sub-folders that has the word `#FIXME` in the last line and put a list of the file names in `CS1XA3/Project01/fixme.log`
+    * This feature finds every file in the repository folder (`CS1XA3` folder) and its sub-folders that has the word `#FIXME` (case sensitive) in the last line and put a list of the file names in `CS1XA3/Project01/fixme.log`
     * The feature will ignore `.git` directory
 * __Execution:__ Execute this feature by typing __2__ when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__ 
@@ -28,7 +28,7 @@ You need to run the script again to test another feature
     * __You need to commit all your changes before executing this feature__
 * __Execution:__ Execute this feature by typing __3__ when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__ 
-    * The idea on how to list the commits is from the Git Pro book: https://git-scm.com/docs/git-rev-list
+    * The idea on how to list the commits is from the Pro Git book: https://git-scm.com/docs/git-rev-list
 
 
 ## Feature 4: File Size List
@@ -38,7 +38,7 @@ You need to run the script again to test another feature
 * __Execution:__ Execute this feature by typing __4__ when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to use `ls` to list in human readable format and sort from largest to smallest is from: https://www.cyberciti.biz/faq/linux-ls-command-sort-by-file-size/
-    * The idea on how to ignore a directory (specigically `.git` directory) is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
+    * The idea on how to ignore a directory with `find` command is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
 
 ## Custom Feature 1: Organize Files
 * __Description:__
@@ -62,4 +62,5 @@ You need to run the script again to test another feature
         * At least 1 upper case letter
         * At least 1 lower case letter
         * At least 1 number from 0-9
+        * At least 1 special character
 * __Execution:__ Execute the feature by typing `CF2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `

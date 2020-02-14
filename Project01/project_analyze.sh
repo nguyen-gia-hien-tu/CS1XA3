@@ -14,7 +14,7 @@ while [ $num_fea -eq 1 ] ; do
 done
 
 # Feature 02: FIXME Log
-if [[ $num_fea -eq 2 ]] ; then
+if [ "$num_fea" -eq 2 ] ; then
     echo -n > ./Project01/fixme.log
     find . -type f -not -iwholename "*.git*" -print0 | while IFS= read -d '' item 
     do
@@ -26,11 +26,11 @@ if [[ $num_fea -eq 2 ]] ; then
 fi
 
 # Feature 03: Checkout Latest Merge
-if [[ $num_fea -eq 3 ]] ; then
+if [ "$num_fea" -eq 3 ] ; then
     git checkout $(git rev-list -i --grep=merge HEAD -1)
 fi
 
 # Feature 04: File Size List
-if [[ $num_fea -eq 4 ]] ; then
+if [ "$num_fea" -eq 4 ] ; then
     find . -type f -not -iwholename "*.git*" | xargs ls -aRlSh
 fi
