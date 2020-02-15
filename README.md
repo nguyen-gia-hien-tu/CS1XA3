@@ -1,1 +1,1 @@
-# This is a repo for COMPSCI 1XA3
+# COMPSCI 1XA3
