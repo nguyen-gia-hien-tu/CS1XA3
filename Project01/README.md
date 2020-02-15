@@ -1,4 +1,4 @@
-# CS 1XA3 Project01 - tun1
+# CS1XA3 Project01 - tun1
 
 ## USAGE
 1. Use the `cd` command to get into the `CS1XA3` folder
