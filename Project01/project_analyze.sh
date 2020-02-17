@@ -34,3 +34,22 @@ fi
 if [ "$num_fea" -eq 4 ] ; then
     find . -type f -not -iwholename "*.git*" | xargs ls -aRlSh
 fi
+
+# Feature 05: File Type Count
+if [[ num_fea -eq 5 ]] ; then
+    read -p "Enter the extension to find how many files with that extension are in the repo: " file_ext
+    num_file=$(ls . -alR | grep ".*\.$file_ext$" | wc -l)
+    echo "There are $num_file files with that extension"
+fi
+
+# Feature 06: Find Tag
+echo -n "Enter a single word represents a tag: "
+read -a tag
+while [[ ${#tag[@]} -ne 1 ]] ; do
+    echo -n "Enter a single word to represent a tag: "
+    read -a tag
+done
+
+echo -n > "$tag".log
+lines=$(find . -type f -name "*.py" | xargs grep '^#' | grep "$tag")
+echo "$lines" > "$tag".log

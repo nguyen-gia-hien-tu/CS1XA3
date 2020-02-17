@@ -9,7 +9,7 @@
 **Note:** 
 * You don't need to type in any argument, after executing the script, there will be user prompt asking you to enter which feature you want to execute
 * Enter __1__, __2__, __3__, or __4__ corresponding to the feature you want to execute
-* You will need to enter the number correctly or the script won't run anything feature
+* You will need to enter the number correctly or the script won't run anything
 * You need to run the script again to test another feature
 
 ## Feature 1: Script Input
@@ -42,6 +42,21 @@ This feature is described in the `USAGE` section above
 * __Reference:__
     * The idea on how to use `ls` to list in human readable format and sort from largest to smallest is from: https://www.cyberciti.biz/faq/linux-ls-command-sort-by-file-size/
     * The idea on how to ignore a directory with `find` command is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
+
+## Feature 5: File Type Count
+* __Description:__ This feature asks the user to enter an extension and outputs the number of files in the repo folder and sub-folders with that extension
+* __Execution:__ Execute this feature by typing `5` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
+* __Reference:__
+    * The idea on how to count files by extension is from: https://www.2daygeek.com/how-to-count-files-by-extension-in-linux/
+
+## Feature 6: Find Tag
+* __Description:__ This feature:
+    * Prompts the user a for a __Tag__ (a single word) using `read` command
+    * Create a log file `CS1XA3/Project01/Tag.log` where `Tag` is the name of the Tag that the user provided (overwrite the file if the file doesn't already exist)
+    * Finds all the lines that begin with a comment (#) and iclude the __Tag__ in all python files, then put them in `CS1XA3/Project01/Tag.log` 
+* __Execution:__ Execute this feature by typing `6` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): ` 
+* __Reference:__
+    * The idea on how to get the number of words given as input in a "read" command is from: https://unix.stackexchange.com/questions/309272/how-to-get-the-number-of-words-given-as-input-in-a-read-command
 
 ## Custom Feature 1: Organize Files
 * __Description:__
