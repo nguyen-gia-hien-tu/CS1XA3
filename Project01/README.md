@@ -44,7 +44,9 @@ This feature is described in the `USAGE` section above
     * The idea on how to ignore a directory with `find` command is from: https://stackoverflow.com/questions/2314643/how-can-i-get-find-to-ignore-svn-directories
 
 ## Feature 5: File Type Count
-* __Description:__ This feature asks the user to enter an extension and outputs the number of files in the repo folder and sub-folders with that extension
+* __Description:__ 
+    * This feature asks the user to enter an extension and outputs the number of files in the repo folder and sub-folders with that extension
+    * The feature will ignore `.git` directory
 * __Execution:__ Execute this feature by typing `5` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to count files by extension is from: https://www.2daygeek.com/how-to-count-files-by-extension-in-linux/
@@ -52,7 +54,7 @@ This feature is described in the `USAGE` section above
 ## Feature 6: Find Tag
 * __Description:__ This feature:
     * Prompts the user a for a __Tag__ (a single word) using `read` command
-    * Create a log file `CS1XA3/Project01/Tag.log` where `Tag` is the name of the Tag that the user provided (overwrite the file if the file doesn't already exist)
+    * Creates a log file `CS1XA3/Project01/Tag.log` where `Tag` is the name of the Tag that the user provided (overwrite the file if the file doesn't already exist)
     * Finds all the lines that begin with a comment (#) and iclude the __Tag__ in all python files, then put them in `CS1XA3/Project01/Tag.log` 
 * __Execution:__ Execute this feature by typing `6` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): ` 
 * __Reference:__

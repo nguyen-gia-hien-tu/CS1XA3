@@ -6,6 +6,8 @@ echo "Feature 1: Script Input"
 echo "Feature 2: FIXME Log"
 echo "Feature 3: Checkout Latest Merge"
 echo "Feature 4: File Size List"
+echo "Feature 5: File Type Count"
+echo "Feature 6: Find Tag"
 echo ""
 
 num_fea=1
@@ -36,20 +38,22 @@ if [ "$num_fea" -eq 4 ] ; then
 fi
 
 # Feature 05: File Type Count
-if [[ num_fea -eq 5 ]] ; then
+if [ $num_fea -eq 5 ] ; then
     read -p "Enter the extension to find how many files with that extension are in the repo: " file_ext
-    num_file=$(ls . -alR | grep ".*\.$file_ext$" | wc -l)
+    num_file=$(ls . -alR -I ".git" | grep ".*\.$file_ext$" | wc -l)
     echo "There are $num_file files with that extension"
 fi
 
 # Feature 06: Find Tag
-echo -n "Enter a single word represents a tag: "
-read -a tag
-while [[ ${#tag[@]} -ne 1 ]] ; do
-    echo -n "Enter a single word to represent a tag: "
+if [ $num_fea -eq 6 ] ; then
+    echo -n "Enter a single word represents a tag: "
     read -a tag
-done
+    while [[ ${#tag[@]} -ne 1 ]] ; do
+        echo -n "Enter a single word to represent a tag: "
+        read -a tag
+    done
 
-echo -n > "$tag".log
-lines=$(find . -type f -name "*.py" | xargs grep '^#' | grep "$tag")
-echo "$lines" > "$tag".log
+    echo -n > "$tag".log
+    lines=$(find . -type f -name "*.py" | xargs grep '^#' | grep "$tag")
+    echo "$lines" > "$tag".log
+fi
