@@ -60,6 +60,15 @@ This feature is described in the `USAGE` section above
 * __Reference:__
     * The idea on how to get the number of words given as input in a "read" command is from: https://unix.stackexchange.com/questions/309272/how-to-get-the-number-of-words-given-as-input-in-a-read-command
 
+## Feature 8: Backup and Delete / Restore
+* __Description:__
+    * The feature will not work if there are 2 files with the same name but in different directories
+* __Execution:__
+* __Reference:__
+    * The idea on how to ignore case with if statement is from: https://stackoverflow.com/questions/13848101/case-insensitive-string-comparison-in-bash
+    * The idea on getting the file path is from: https://superuser.com/questions/202645/how-to-get-the-full-path-of-a-file-in-bash/202654
+
+
 ## Custom Feature 1: Organize Files
 * __Description:__
     * This feature asks the user to choose __Organize__ or __Unorganize__
