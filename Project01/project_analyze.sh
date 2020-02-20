@@ -81,7 +81,7 @@ if [ $num_fea -eq 8 ] ; then
     elif [ "${option,,}" == "restore" ] ; then
         if [ -f ./Project01/restore.log ] ; then
                 for f in ./Project01/backup/* ; do
-                        mv "$f" $(grep $(echo "$f" | rev | cut -d "/" -f 1 | rev) ./Project01/restore.log)
+                        cp "$f" $(grep $(echo "$f" | rev | cut -d "/" -f 1 | rev) ./Project01/restore.log)
                 done
         else
             "The 'restore.log' file does not exist"
