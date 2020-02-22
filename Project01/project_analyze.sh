@@ -12,12 +12,12 @@ echo "Feature 8: Backup and Delete / Restore"
 echo ""
 
 num_fea=1
-while [ $num_fea -eq 1 ] ; do
+while [ $num_fea = "1" ] ; do
     read -p "Enter the feature to be executed (this is Feature 1): " num_fea
 done
 
 # Feature 02: FIXME Log
-if [ "$num_fea" -eq 2 ] ; then
+if [ "$num_fea" = "2" ] ; then
     echo -n > ./Project01/fixme.log
     find . -type f -not -iwholename "*.git*" -print0 | while IFS= read -d '' item 
     do
@@ -29,24 +29,24 @@ if [ "$num_fea" -eq 2 ] ; then
 fi
 
 # Feature 03: Checkout Latest Merge
-if [ "$num_fea" -eq 3 ] ; then
+if [ "$num_fea" = "3" ] ; then
     git checkout $(git rev-list -i --grep=merge HEAD -1)
 fi
 
 # Feature 04: File Size List
-if [ "$num_fea" -eq 4 ] ; then
+if [ "$num_fea" = "4" ] ; then
     find . -type f -not -iwholename "*.git*" | xargs ls -aRlSh
 fi
 
 # Feature 05: File Type Count
-if [ $num_fea -eq 5 ] ; then
+if [ $num_fea = "5" ] ; then
     read -p "Enter the extension to find how many files with that extension are in the repo: " file_ext
     num_file=$(ls . -alR -I ".git" | grep ".*\.$file_ext$" | wc -l)
     echo "There are $num_file files with that extension"
 fi
 
 # Feature 06: Find Tag
-if [ $num_fea -eq 6 ] ; then
+if [ $num_fea = "6" ] ; then
     echo -n "Enter a single word to represent a tag: "
     read -a tag
     while [[ ${#tag[@]} -ne 1 ]] ; do
@@ -60,7 +60,7 @@ if [ $num_fea -eq 6 ] ; then
 fi
 
 # Feature 8: Backup and Delete / Restore
-if [ $num_fea -eq 8 ] ; then
+if [ $num_fea = "8" ] ; then
     read -p "Enter \"Backup\" to backup .tmp files or \"Restore\" to restore the files to their original location: " option
 
     if [ "${option,,}" == "backup" ] ; then
@@ -87,4 +87,40 @@ if [ $num_fea -eq 8 ] ; then
             "The 'restore.log' file does not exist"
         fi
     fi
+fi
+
+# Custom Feature 1: Organize Files
+#if [ $num_fea = "CF1" ] ; then
+    
+#fi
+
+# Custom Feature 2: Checking Password
+if [ $num_fea = "CF2" ] ; then
+    echo "PASSWORDS NEEDED TO BE IMPROVED" > ./Project01/password.log
+
+    find . -type f -name "*.txt" -print0 | while IFS= read -d '' file
+    do
+        grep -oP "(?<=Password: )[^ ]+" "$file" | while IFS= read passLine ; do
+            if [ ${#passLine} -lt 6 ] || [ ${#passLine} -gt 255 ] || ! [[ "$passLine" =~ [A-Z] ]] || ! [[ "$passLine" =~ [a-z] ]] || ! [[ "$passLine" =~ [0-9] ]] || ! [[ "$passLine" == *['!'@\#\$%^\&*()_+]* ]] ; then
+                echo >> ./Project01/password.log
+                echo "$file" >> ./Project01/password.log
+                echo "Password: $passLine" >> ./Project01/password.log
+            fi
+            if [ ${#passLine} -lt 6 ] || [ ${#passLine} -gt 255 ] ; then
+                echo "The length of the password is not from 6 to 255 characters" >> ./Project01/password.log
+            fi
+            if ! [[ "$passLine" =~ [A-Z] ]] ; then
+                echo "This password needs to have at least 1 upper case letter" >> ./Project01/password.log
+            fi
+            if ! [[ "$passLine" =~ [a-z] ]] ; then
+                echo "This password needs to have at least 1 lower case letter" >> ./Project01/password.log
+            fi
+            if ! [[ "$passLine" =~ [0-9] ]] ; then
+                echo "This password needs to have at least 1 number" >> ./Project01/password.log
+            fi
+            if ! [[ "$passLine" == *['!'@\#\$%^\&*()_+]* ]] ; then
+                echo "This password needs to have at least 1 special character" >> ./Project01/password.log
+            fi
+        done
+    done
 fi

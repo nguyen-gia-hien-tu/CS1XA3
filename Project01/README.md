@@ -93,3 +93,6 @@ This feature is described in the `USAGE` section above
         * At least 1 number from 0-9
         * At least 1 special character
 * __Execution:__ Execute the feature by typing `CF2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
+* __Reference:__
+    * The idea on how to search for a word after a specific word is from: https://stackoverflow.com/questions/17371197/extract-one-word-after-a-specific-word-on-the-same-line
+    * The idea on how to check if a string contains what is from: https://www.golinuxcloud.com/check-if-string-contains-numbers-shell-script/
