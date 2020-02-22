@@ -91,7 +91,7 @@ This feature is described in the `USAGE` section above
         * At least 1 upper case letter
         * At least 1 lower case letter
         * At least 1 number from 0-9
-        * At least 1 special character
+        * At least 1 special character (i.e. !@#$%^&*()_+)
 * __Execution:__ Execute the feature by typing `CF2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to search for a word after a specific word is from: https://stackoverflow.com/questions/17371197/extract-one-word-after-a-specific-word-on-the-same-line
