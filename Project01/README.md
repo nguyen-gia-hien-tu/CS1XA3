@@ -8,7 +8,7 @@
    
 **Note:** 
 * You don't need to type in any argument, after executing the script, there will be user prompt asking you to enter which feature you want to execute
-* Enter __1__, __2__, __3__, or __4__ corresponding to the feature you want to execute
+* Enter __1__, __2__, __3__, __4__,__...__ corresponding to the feature you want to execute
 * You will need to enter the number correctly or the script won't run anything
 * You need to run the script again to test another feature
 
@@ -62,8 +62,21 @@ This feature is described in the `USAGE` section above
 
 ## Feature 8: Backup and Delete / Restore
 * __Description:__
-    * The feature will not work if there are 2 files with the same name but in different directories
-* __Execution:__
+    * The feature using the read command to prompt the user to enter `Backup` or `Restore`  
+        * If the user selects __Backup__:
+            * The feature will create an empty directory `CS1XA3/Project01/backup` if it doesn't exist
+            * Empty the directory `CS1XA3/Project1/backup` if it does exist
+            * The feature finds all the files that end in __.tmp__ extension
+                * Copy them to the `CS1XA3/Project1/backup` directory
+                * Delete them from their original location
+                * Create a file CS1XA3/Project01/backup/restore.log that contains a list of paths of the files original locations
+        * If the user selects __Restore__:
+            * Use the file `CS1XA3/Project1/backup/restore.log` to restore the files to their original location
+            * If the files does not exist, it will give an error message
+    * __Notes:__
+        * The feature will not work if there are 2 files with the same name but in different directories
+        * The feature will not work properly if the `CS1XA3/Project01/backup` directory or `CS1XA3/Project01/restore.log` file are manually modified
+* __Execution:__Execute the feature by typing `8` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to ignore case with if statement is from: https://stackoverflow.com/questions/13848101/case-insensitive-string-comparison-in-bash
     * The idea on getting the file path is from: https://superuser.com/questions/202645/how-to-get-the-full-path-of-a-file-in-bash/202654
@@ -97,4 +110,4 @@ This feature is described in the `USAGE` section above
 * __Execution:__ Execute the feature by typing `CF2` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to search for a word after a specific word is from: https://stackoverflow.com/questions/17371197/extract-one-word-after-a-specific-word-on-the-same-line
-    * The idea on how to check if a string contains what is from: https://www.golinuxcloud.com/check-if-string-contains-numbers-shell-script/
+    * The idea on how to check if a string contains specific characters is from: https://www.golinuxcloud.com/check-if-string-contains-numbers-shell-script/

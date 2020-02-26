@@ -86,21 +86,20 @@ if [ $num_fea = "8" ] ; then
                     cp "$f" $(grep $(echo "$f" | rev | cut -d "/" -f 1 | rev) ./Project01/restore.log)
                 done
         else
-            echo "The 'restore.log' file does not exist"
+            echo "ERROR: The 'restore.log' file does not exist"
         fi
     fi
 fi
 
 # Custom Feature 1: Organize Files
 if [ $num_fea = "CF1" ] ; then
-
-    read -p "Enter \"Organize\" or \"Restore\": " option
+    read -p "Enter \"Organize\" to organize files with the same extension or \"Restore\" to restore those files to their original location: " option
 
     if [ "${option,,}" == 'organize' ] ; then
         echo -n > ./Project01/organize_path.log
-        while [ $(find . -type f -not -path "./Project01/Organize_*" -not -path "./Project01/.*" -not -name "organize.sh" -not -name "organize_path.log" -name "*.*" | wc -l) -gt 0 ]
+        while [ $(find . -type f -not -path "./Project01/Organize_*" -not -path "./.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -name "*.*" | wc -l) -gt 0 ]
             do
-                file=$(find . -type f -not -path "./Project01/Organize_*" -not -path "./Project01/.*" -not -name "organize.sh" -not -name "organize_path.log" -name "*.*" | head -n 1)                
+                file=$(find . -type f -not -path "./Project01/Organize_*" -not -path "./.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -name "*.*" | head -n 1)                
                 fileExt=${file##*.}
                 if ! [ -d ./Project01/Organize_"$fileExt" ] ; then
                     mkdir ./Project01/Organize_"$fileExt"
@@ -109,8 +108,8 @@ if [ $num_fea = "CF1" ] ; then
                     mkdir ./Project01/Organize_"$fileExt"
                 fi
 
-                echo "$(find . -type f -not -path "./Project01/Organize_*" -not -path "./Project01/.*" -not -name "organize.sh" -not -name "organize_path.log" -name "*.$fileExt" -print0 | xargs -0 readlink -f)" >> ./Project01/organize_path.log 
-                find . -type f -not -path "./Project01/Organize_*" -not -path "./Project01/.*" -not -name "organize.sh" -not -name "organize_path.log" -name "*.$fileExt" -print0 | xargs -0 -i mv '{}' ./Project01/Organize_$fileExt       
+                echo "$(find . -type f -not -path "./Project01/Organize_*" -not -path "./.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -name "*.$fileExt" -print0 | xargs -0 readlink -f)" >> ./Project01/organize_path.log 
+                find . -type f -not -path "./Project01/Organize_*" -not -path "./.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -name "*.$fileExt" -print0 | xargs -0 -i mv '{}' ./Project01/Organize_$fileExt       
             done
 
     elif [ "${option,,}" == "restore" ] ; then
@@ -119,10 +118,9 @@ if [ $num_fea = "CF1" ] ; then
                     cp "$file" $(grep $(echo "$file" | rev | cut -d "/" -f 1 | rev) ./Project1/organize_path.log)
             done
         else
-                echo "The 'organize_path.log' file does not exist"
+                echo "ERROR: The 'organize_path.log' file does not exist"
         fi
     fi
-
 fi
 
 # Custom Feature 2: Checking Password
