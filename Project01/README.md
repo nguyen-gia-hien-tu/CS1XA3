@@ -78,6 +78,8 @@ This feature is described in the `USAGE` section above
     * If the user chooses __Unorganize__:
         * All of the files that are stored in the `CS1XA3/Project01/Organized_<the extension>` folders will restored to their original location
 * __Execution:__ Execute the feature by typing `CF1` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
+* __Reference:__
+    * The idea on how to get the extension of a file is from: https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
 
 ## Custom Feature 2: Checking Password
 * __Desciption:__ 
