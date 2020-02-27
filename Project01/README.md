@@ -93,7 +93,7 @@ This feature is described in the `USAGE` section above
     * __NOTES:__
         * The feature will not work if there are 2 files with the same name but in different directories
         * The feature will not work properly if the `CS1XA3/Project01/Organize_<the extension>` directories or `CS1XA3/Project01/organize_path.log` file are manually modified or added
-        * The feature does not organize __CS1XA3/Project01/project_analyze.sh__, __CS1XA3/Project01/organize_path.log__, __files without extension__ and any __README.md__ files
+        * The feature does not organize __CS1XA3/Project01/project_analyze.sh__, __CS1XA3/Project01/organize_path.log__, __files without extension__ or any __README.md__ files
 * __Execution:__ Execute the feature by typing `CF1` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to get the extension of a file is from: https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
