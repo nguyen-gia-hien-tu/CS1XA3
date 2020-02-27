@@ -93,13 +93,13 @@ fi
 
 # Custom Feature 1: Organize Files
 if [ $num_fea = "CF1" ] ; then
-    read -p "Enter \"Organize\" to organize files with the same extension or \"Restore\" to restore those files to their original location: " option
+    read -p "Enter \"Organize\" to organize files with the same extension or \"Unorganize\" to restore those files to their original location: " option
 
     if [ "${option,,}" == 'organize' ] ; then
         echo -n > ./Project01/organize_path.log
-        while [ $(find . -type f -not -path "./Project01/Organize_*" -not -path "./.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -name "*.*" | wc -l) -gt 0 ]
+        while [ $(find . -type f -not -path "./Project01/Organize_*" -not -path "*/\.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -not -name "README.md" -name "*\.*" | wc -l) -gt 0 ]
             do
-                file=$(find . -type f -not -path "./Project01/Organize_*" -not -path "./.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -name "*.*" | head -n 1)                
+                file=$(find . -type f -not -path "./Project01/Organize_*" -not -path "*/\.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -not -name "README.md" -name "*\.*" | head -n 1)                
                 fileExt=${file##*.}
                 if ! [ -d ./Project01/Organize_"$fileExt" ] ; then
                     mkdir ./Project01/Organize_"$fileExt"
@@ -108,14 +108,16 @@ if [ $num_fea = "CF1" ] ; then
                     mkdir ./Project01/Organize_"$fileExt"
                 fi
 
-                echo "$(find . -type f -not -path "./Project01/Organize_*" -not -path "./.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -name "*.$fileExt" -print0 | xargs -0 readlink -f)" >> ./Project01/organize_path.log 
-                find . -type f -not -path "./Project01/Organize_*" -not -path "./.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -name "*.$fileExt" -print0 | xargs -0 -i mv '{}' ./Project01/Organize_$fileExt       
+                echo "$(find . -type f -not -path "./Project01/Organize_*" -not -path "*/\.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -not -name "README.md" -name "*\.$fileExt" -print0 | xargs -0 readlink -f)" >> ./Project01/organize_path.log 
+                find . -type f -not -path "./Project01/Organize_*" -not -path "*/\.*" -not -name "project_analyze.sh" -not -name "organize_path.log" -not -name "README.md" -name "*\.$fileExt" -print0 | xargs -0 -i mv '{}' ./Project01/Organize_"$fileExt"       
             done
 
-    elif [ "${option,,}" == "restore" ] ; then
+    elif [ "${option,,}" == "unorganize" ] ; then
         if [ -f ./Project01/organize_path.log ] ; then
-            for orgDir in ./Project01/Organize_*/* ; do
-                    cp "$file" $(grep $(echo "$file" | rev | cut -d "/" -f 1 | rev) ./Project1/organize_path.log)
+            for orgDir in ./Project01/Organize_* ; do
+                for file in "$orgDir"/* ; do
+                    cp "$file" "$(grep "$(echo "$file" | rev | cut -d "/" -f 1 | rev)" ./Project01/organize_path.log)"
+                done
             done
         else
                 echo "ERROR: The 'organize_path.log' file does not exist"

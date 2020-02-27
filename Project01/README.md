@@ -62,18 +62,18 @@ This feature is described in the `USAGE` section above
 
 ## Feature 8: Backup and Delete / Restore
 * __Description:__
-    * The feature using the read command to prompt the user to enter `Backup` or `Restore`  
+    * The feature using the read command to prompt the user to enter `Backup` or `Restore` (case insensitive) 
         * If the user selects __Backup__:
             * The feature will create an empty directory `CS1XA3/Project01/backup` if it doesn't exist
-            * Empty the directory `CS1XA3/Project1/backup` if it does exist
+            * Empty the directory `CS1XA3/Projec0t1/backup` if it does exist
             * The feature finds all the files that end in __.tmp__ extension
-                * Copy them to the `CS1XA3/Project1/backup` directory
+                * Copy them to the `CS1XA3/Projec0t1/backup` directory
                 * Delete them from their original location
                 * Create a file CS1XA3/Project01/backup/restore.log that contains a list of paths of the files original locations
         * If the user selects __Restore__:
-            * Use the file `CS1XA3/Project1/backup/restore.log` to restore the files to their original location
+            * Use the file `CS1XA3/Project01/backup/restore.log` to restore the files to their original location
             * If the files does not exist, it will give an error message
-    * __Notes:__
+    * __NOTES:__
         * The feature will not work if there are 2 files with the same name but in different directories
         * The feature will not work properly if the `CS1XA3/Project01/backup` directory or `CS1XA3/Project01/restore.log` file are manually modified
 * __Execution:__Execute the feature by typing `8` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
@@ -84,15 +84,20 @@ This feature is described in the `USAGE` section above
 
 ## Custom Feature 1: Organize Files
 * __Description:__
-    * This feature asks the user to choose __Organize__ or __Unorganize__
+    * This feature asks the user to choose __Organize__ or __Unorganize__ (case insensitive)
     * If the user chooses __Organize__:
         * The script will move all non-hidden files with the same extension into the folder `CS1XA3/Project01/Organize_<the extension>` where `the extension` is the extension of those files
         * The script will keep track of the files' original paths by storing them in `CS1XA3/Project01/organize_path.log` 
     * If the user chooses __Unorganize__:
-        * All of the files that are stored in the `CS1XA3/Project01/Organized_<the extension>` folders will restored to their original location
+        * All of the files that are stored in the `CS1XA3/Project01/Organized_<the extension>` folders will be restored to their original location
+    * __NOTES:__
+        * The feature will not work if there are 2 files with the same name but in different directories
+        * The feature will not work properly if the `CS1XA3/Project01/Organize_<the extension>` directories or `CS1XA3/Project01/organize_path.log` file are manually modified or added
+        * The feature does not organize __CS1XA3/Project01/project_analyze.sh__, __CS1XA3/Project01/organize_path.log__, __files without extension__ and any __README.md__ files
 * __Execution:__ Execute the feature by typing `CF1` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to get the extension of a file is from: https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
+    * The idea on how to ignore hidden files and directories is from: https://askubuntu.com/questions/266179/how-to-exclude-ignore-hidden-files-and-directories-in-a-wildcard-embedded-find
 
 ## Custom Feature 2: Checking Password
 * __Desciption:__ 
