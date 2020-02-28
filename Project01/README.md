@@ -46,7 +46,7 @@ This feature is described in the `USAGE` section above
 ## Feature 5: File Type Count
 * __Description:__ 
     * This feature asks the user to enter an extension and outputs the number of files in the repo folder and sub-folders with that extension
-    * The feature will ignore `.git` directory
+    * The feature will look into hidden folders but ignore `.git` directory
 * __Execution:__ Execute this feature by typing `5` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
     * The idea on how to count files by extension is from: https://www.2daygeek.com/how-to-count-files-by-extension-in-linux/
@@ -54,7 +54,7 @@ This feature is described in the `USAGE` section above
 ## Feature 6: Find Tag
 * __Description:__ This feature:
     * Prompts the user a for a __Tag__ (a single word) using `read` command
-    * Creates a log file `CS1XA3/Project01/Tag.log` where `Tag` is the name of the Tag that the user provided (overwrite the file if the file doesn't already exist)
+    * Creates a log file `CS1XA3/Project01/Tag.log` where `Tag` is the name of the Tag that the user provided (overwrite the file if the files exists and create the file if it doesn't already exist)
     * Finds all the lines that begin with a comment (#) and iclude the __Tag__ in all python files, then put them in `CS1XA3/Project01/Tag.log` 
 * __Execution:__ Execute this feature by typing `6` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): ` 
 * __Reference:__
@@ -62,7 +62,7 @@ This feature is described in the `USAGE` section above
 
 ## Feature 8: Backup and Delete / Restore
 * __Description:__
-    * The feature using the read command to prompt the user to enter `Backup` or `Restore` (case insensitive) 
+    * The feature uses the read command to prompt the user to enter `Backup` or `Restore` (case insensitive) 
         * If the user selects __Backup__:
             * The feature will create an empty directory `CS1XA3/Project01/backup` if it doesn't exist
             * Empty the directory `CS1XA3/Projec0t1/backup` if it does exist
@@ -74,7 +74,7 @@ This feature is described in the `USAGE` section above
             * Use the file `CS1XA3/Project01/backup/restore.log` to restore the files to their original location
             * If the files does not exist, it will give an error message
     * __NOTES:__
-        * The feature will not work if there are 2 files with the same name but in different directories
+        * The feature will not work if there are 2 files with the same name in different directories
         * The feature will not work properly if the `CS1XA3/Project01/backup` directory or `CS1XA3/Project01/restore.log` file are manually modified
 * __Execution:__Execute the feature by typing `8` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
@@ -92,7 +92,7 @@ This feature is described in the `USAGE` section above
         * All of the files that are stored in the `CS1XA3/Project01/Organized_<the extension>` folders will be restored to their original location
     * __NOTES:__
         * The feature will not work if there are 2 files with the same name but in different directories
-        * The feature will not work properly if the `CS1XA3/Project01/Organize_<the extension>` directories or `CS1XA3/Project01/organize_path.log` file are manually modified or added
+        * The feature will not work properly if the `CS1XA3/Project01/Organize_<the extension>` directories or `CS1XA3/Project01/organize_path.log` file are manually modified
         * The feature does not organize __CS1XA3/Project01/project_analyze.sh__, __CS1XA3/Project01/organize_path.log__, __files without extension__ or any __README.md__ files
 * __Execution:__ Execute the feature by typing `CF1` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): `
 * __Reference:__
@@ -101,7 +101,7 @@ This feature is described in the `USAGE` section above
 
 ## Custom Feature 2: Checking Password
 * __Desciption:__ 
-    * The script will find every file ends with `.txt` and has the word `Password: ` in it
+    * The script will find every file ends with `.txt` and has exactly the word `Password: ` in it
     * It will then check if the word follows the word `Password: ` is a good password or not
     * The script will output to the `CS1XA3/Project01/password.log` file (it will create the `password.log` file if it doesn't exist, overwrite if it does) __the name of the file__ in which the password is not good, __the password__ and __recommend__ what is missing to be a good password
     * If the `.txt` file has multiple passwords, the script will output the recommendation to be a good password corresponding to each password
