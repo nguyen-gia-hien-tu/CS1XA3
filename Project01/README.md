@@ -55,7 +55,7 @@ This feature is described in the `USAGE` section above
 * __Description:__ This feature:
     * Prompts the user a for a __Tag__ (a single word) using `read` command
     * Creates a log file `CS1XA3/Project01/Tag.log` where `Tag` is the name of the Tag that the user provided (overwrite the file if the files exists and create the file if it doesn't already exist)
-    * Finds all the lines that begin with a comment (#) and iclude the __Tag__ in all python files, then put them in `CS1XA3/Project01/Tag.log` 
+    * Finds all the lines that begin with a comment (#) and include the __Tag__ (exactly) in all python files, then put them in `CS1XA3/Project01/Tag.log` 
 * __Execution:__ Execute this feature by typing `6` when you are prompted with the statement `Enter the feature to be executed (this is Feature 1): ` 
 * __Reference:__
     * The idea on how to get the number of words given as input in a "read" command is from: https://unix.stackexchange.com/questions/309272/how-to-get-the-number-of-words-given-as-input-in-a-read-command
