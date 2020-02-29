@@ -87,7 +87,7 @@ This feature is described in the `USAGE` section above
     * This feature asks the user to choose __Organize__ or __Unorganize__ (case insensitive)
     * If the user chooses __Organize__:
         * The script will move all non-hidden files with the same extension into the folder `CS1XA3/Project01/Organize_<the extension>` where `the extension` is the extension of those files
-        * The script will keep track of the files' original paths by storing them in `CS1XA3/Project01/organize_path.log` 
+        * The script will keep track of the files' original paths by storing them in `CS1XA3/Project01/organize_path.log`
     * If the user chooses __Unorganize__:
         * All of the files that are stored in the `CS1XA3/Project01/Organized_<the extension>` folders will be restored to their original location
     * __NOTES:__
