@@ -28,29 +28,33 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <!-- PROFILE -->
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="Resume Images/Linkedin Picture.jpg" style="width:100%" alt="Avatar">
+          
+          <img id="image" src="Resume Images/0.jpg" style="width:100%" alt="Avatar" id="images">
+          
           <div class="w3-display-bottom w3-container w3-text-black">
             <br>
-            <h2 class="bgCol"><b>NGUYEN GIA HIEN TU</b></h2>
+            <h2 id="name" class="bgCol"><b>NGUYEN GIA HIEN TU</b></h2>
           </div>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Studying Honours of Computer Science Co-op Program</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" style="font-size:100px"></i>Hamilton, Ontario, Canada</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>giahien196@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>365-888-5087</p>
-          <p><i class="fa fa-github fa-fw w3-margin-right w3-large w3-text-teal"></i>
+          <div id="info">
+            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Studying Honours of Computer Science Co-op Program Level I</p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" style="font-size:100px"></i>Hamilton, Ontario, Canada</p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>giahien196@gmail.com</p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>365-888-5087</p>
+            <p><i class="fa fa-github fa-fw w3-margin-right w3-large w3-text-teal"></i>
               <a href="https://github.com/nguyen-gia-hien-tu" target="blank">My GitHub</a>
-          </p>
-          <p><i class="fa fa-linkedin-square fa-fw w3-margin-right w3-large w3-text-teal"></i>
-            <a href="https://linkedin.com/in/nguyen-gia-hien-tu" target="blank">My Linkedin</a>
-          </p>
-          <p></p>
+            </p>
+            <p><i class="fa fa-linkedin-square fa-fw w3-margin-right w3-large w3-text-teal"></i>
+              <a href="https://linkedin.com/in/nguyen-gia-hien-tu" target="blank">My Linkedin</a>
+            </p>
+            <p></p>
+          </div>
           <hr>
 
           <!-- SKILLS -->
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <ul>
+          <p id="skill" class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <ul id="skills">
             <li>Java</li>
             <li>Python</li>
             <li>Bash</li>
@@ -59,8 +63,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
           <!-- AWARDS -->
           <hr>
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-trophy fa-fw w3-margin-right w3-text-teal"></i>AWARDS</b></p>
-          <ul>
+          <p id="award" class="w3-large w3-text-theme"><b><i class="fa fa-trophy fa-fw w3-margin-right w3-text-teal"></i>AWARDS</b></p>
+          <ul id="awards">
             <li>McMaster President’s Entrance Award</li>
             <li>Ontario Scholar</li>
             <li>Distinction in Leadership Award</li>
@@ -78,10 +82,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <!-- Education -->
       <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-small"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i><span class="bgCol">EDUCATION</span></h2>
-        
-        <div class="w3-container">
-          <h5 class="w3-opacity-min"><b>Bachelor of Applied Science - Honours of Computer Science</b></h5>
+        <h2 id="Edu" class="w3-text-grey w3-padding-small"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i><span class="bgCol">EDUCATION</span></h2>
+        <h5 class="w3-opacity-min"><b>Bachelor of Applied Science - Honours of Computer Science Level I</b></h5>
+
+        <div id="Education" class="w3-container">
           <h5 class="w3-opacity-min"><b>McMaster University, Hamilton, ON, Canada</b></h5>
           <ul>
             <li>Awarded the McMaster President’s Entrance Award for achieving an average of 95% or higher in high school</li>
@@ -96,7 +100,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <!-- Extracurricular Activity -->
       <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-small"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i><span class="bgCol">EXTRACURRICULAR ACTIVITY</span></h2>
+        <h2 id="ExtraAct" class="w3-text-grey w3-padding-small"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i><span class="bgCol">EXTRACURRICULAR ACTIVITIES</span></h2>
         
         <!-- McMaster Start Coding -->
         <div class="w3-container">
@@ -104,8 +108,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <span class="w3-opacity w3-right">September 2019 - Present</span>
           </h5>
           <ul>
-            <li>Visit schools and introduce children from grade 2 to 8 basics concept of Computer Science</li>
-            <li>Assist lead instructor on teaching kids creating pictures and games with a tool using Elm language</li>
+            <li class="Activities">Visit schools and introduce children from grade 2 to 8 basics concept of Computer Science</li>
+            <li class="Activities">Assist lead instructor on teaching kids creating pictures and games with a tool using Elm language</li>
           </ul>
         </div>
         <hr>
@@ -116,9 +120,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <span class="w3-opacity w3-right">September 2019 - December 2019</span>
           </h5>
           <ul>
-            <li>Assist in setting up Linkedin photoshoot night</li>
-            <li>Discuss on organizing the Carnival Event for McMaster Faculty of Engineering</li>
-            <li>Volunteer in setting up the Engineering Event of the McMaster Faculty of Engineering</li>
+            <li class="Activities">Assisted in setting up LinkedIn photoshoot night</li>
+            <li class="Activities">Discussed on organizing the Carnival Event for McMaster Faculty of Engineering</li>
+            <li class="Activities">Volunteered in setting up the Engineering Event of the McMaster Faculty of Engineering</li>
           </ul>
         </div>
         <hr>
@@ -129,8 +133,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <span class="w3-opacity w3-right">January 2019 - April 2019</span>
           </h5>
           <ul>
-            <li>Organized events to help promote the importance of many characteristics and traits including caring, honesty, optimism, positive conflict resolution, inclusiveness, etc.</li>
-            <li>Discussed on organizing those events</li>
+            <li class="Activities">Organized events to help promote the importance of many characteristics and traits including caring, honesty, optimism, positive conflict resolution, inclusiveness, etc.</li>
+            <li class="Activities">Discussed on organizing those events</li>
           </ul>
         </div>
         <hr>
@@ -141,12 +145,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <span class="w3-opacity w3-right">Ocober 2018 - April 2019</span>
           </h5>
           <ul>
-            <li>Represented Demark in high school Model UN’s conference</li>
-            <li>Represented Estonia in the CWMUN 2019</li>
-            <li>Debated on several topics of the world issues such as solving poverty, peaceful uses of outer space, youth employment in Africa to ending hunger and poverty</li>
+            <li class="Activities" >Represented Demark in high school Model UN’s conference</li>
+            <li class="Activities" >Represented Estonia in the CWMUN 2019</li>
+            <li class="Activities" >Debated on several topics of the world issues such as solving poverty, peaceful uses of outer space, youth employment in Africa to ending hunger and poverty, etc.</li>
           </ul>
         </div>
-                
+        <br>     
       </div>
       
     <!-- End Right Column -->
@@ -160,12 +164,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <a class="fa fa-facebook-official w3-hover-opacity" href="https://www.facebook.com/profile.php?id=100015557958392" target="_blank"></a>
+  <a class="fa fa-instagram w3-hover-opacity" href="https://www.instagram.com/tunguyengiahien/" target="_blank"></a>
+  <a class="fa fa-linkedin w3-hover-opacity" href="https://linkedin.com/in/nguyen-gia-hien-tu" target="_blank"></a>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
