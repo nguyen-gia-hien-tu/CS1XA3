@@ -25,23 +25,26 @@ $(document).ready(function(){
 
     // Hide and Show "Skills" and "Awards"
     $("#name").click(function(){
-        $("#info").toggle();
+        $("#info").slideToggle(500);
     });
 
     $("#skill").click(function(){
-        $("#skills").toggle();
+        $("#skills").fadeToggle(500);
     });
 
     $("#award").click(function(){
-        $("#awards").toggle();
+        $("#awards").toggle(500);
     });
 
     $("#Edu").click(function(){
-        $("#Education").toggle();
+        $("#Education").animate({
+            height: 'toggle',
+            width: 'toggle'
+        });
     });
 
     $("#ExtraAct").click(function(){
-        $(".Activities").toggle();
+        $(".Activities").slideToggle(500);
     });
 
     // Change image
@@ -56,5 +59,10 @@ $(document).ready(function(){
         }, 3000);
     };
     imageLooping();
+
+    // Alert
+    $("img").dblclick(function(){
+        alert("Please don't hit me :(");
+    });
 });
 

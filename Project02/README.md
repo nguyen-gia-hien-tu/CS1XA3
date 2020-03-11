@@ -10,9 +10,12 @@
     * Hover the mouse on one of the words again to "uncolor" the background color
 
 * __Feature 2:__
-    * Click on the words __NGUYEN GIA HIEN TU__, __SKILLS__, __AWARDS__, __EDUCATION__, __EXTRACURRICULAR ACTIVITIES__ to minimize/maximize the content of each corresponding section
+    * Click on the words __NGUYEN GIA HIEN TU__, __SKILLS__, __AWARDS__, __EDUCATION__, __EXTRACURRICULAR ACTIVITIES__ to minimize/maximize the content of each corresponding section using different types of "toggling" animations
 * __Feature 3:__
-    * The webpage automatically changes the image (avatar) after a few seconds
+    * The webpage automatically loops over the images (avatar) after a few seconds
+
+* __Feature 4:__
+    * An alert will pop up if you double click on the image (avatar)
 
 ## Reference:
 * The HTML document for the resume used the following HTML Template from w3schools: https://www.w3schools.com/w3css/tryw3css_templates_cv.htm
