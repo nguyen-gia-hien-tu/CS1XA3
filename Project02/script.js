@@ -15,7 +15,7 @@ $(document).ready(function(){
     });
 
    function getRandomColor() {
-    var letters = '9ABCDEF';
+    var letters = '9ABCDEF';    // to choose bright color
     var color = '#';
     for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 7)];
@@ -23,7 +23,7 @@ $(document).ready(function(){
     return color;
     }
 
-    // Hide and Show "Skills" and "Awards"
+    // Hide and Show "Name", "Skills", "Awards", "Education", "Extracurricular Activities"
     $("#name").click(function(){
         $("#info").slideToggle(500);
     });
@@ -52,8 +52,8 @@ $(document).ready(function(){
         let rotator = document.getElementById('image'),     //get the element
             dir = 'Resume Images/',                         //images folder
             num = 1,                                        //start number
-            len = 3;                                        //limit
-        setInterval(function(){                             //interval changer
+            len = 3;                                        //number of the images
+        setInterval(function(){                             //interval for delay in displaying next image
             rotator.src = dir + num +'.jpg';                //change picture
             num = (num == len-1) ? 0 : ++num;               //reset if last image reached
         }, 3000);

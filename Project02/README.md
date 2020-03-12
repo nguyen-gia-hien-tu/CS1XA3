@@ -18,7 +18,7 @@
     * An alert will pop up if you double click on the image (avatar)
 
 ## Reference:
-* The HTML document for the resume used the following HTML Template from w3schools: https://www.w3schools.com/w3css/tryw3css_templates_cv.htm
+* The HTML document for the resume used the following HTML and CSS Template from w3schools: https://www.w3schools.com/w3css/tryw3css_templates_cv.htm
 
 * The snippets of Javascript code on how to generate random color is from: https://stackoverflow.com/questions/1484506/random-color-generator
 
