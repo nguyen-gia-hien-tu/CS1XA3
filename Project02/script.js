@@ -47,22 +47,22 @@ $(document).ready(function(){
         $(".Activities").slideToggle(500);
     });
 
-    // Change image
+    // Automatically change image
     function imageLooping() {
-        let rotator = document.getElementById('image'),     //get the element
-            dir = 'Resume Images/',                         //images folder
-            num = 1,                                        //start number
-            len = 3;                                        //number of the images
-        setInterval(function(){                             //interval for delay in displaying next image
-            rotator.src = dir + num +'.jpg';                //change picture
-            num = (num == len-1) ? 0 : ++num;               //reset if last image reached
+        let rotator = document.getElementById('image'),     // get the element
+            dir = 'Resume Images/',                         // images folder
+            num = 1,                                        // start number
+            len = 3;                                        // number of the images
+        setInterval(function(){                             // set interval for delay in displaying next image
+            rotator.src = dir + num +'.jpg';                // change picture
+            num = (num == len-1) ? 0 : ++num;               // reset if last image reached
         }, 3000);
     };
     imageLooping();
 
-    // Alert
+    // Alert when double click on the avatar
     $("img").dblclick(function(){
-        alert("Please don't hit me :(");
+        alert("Please don't hit me :( or I will disturb you by popping up this alert.");
     });
 });
 

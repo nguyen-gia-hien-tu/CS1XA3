@@ -12,13 +12,15 @@
 * __Feature 2:__
     * Click on the words __NGUYEN GIA HIEN TU__, __SKILLS__, __AWARDS__, __EDUCATION__, __EXTRACURRICULAR ACTIVITIES__ to minimize/maximize the content of each corresponding section using different types of "toggling" animations
 * __Feature 3:__
-    * The webpage automatically loops over the images (avatar) after a few seconds
+    * The webpage automatically loops over the images (avatars) after a few seconds
 
 * __Feature 4:__
     * An alert will pop up if you double click on the image (avatar)
 
 ## Reference:
 * The HTML document for the resume used the following HTML and CSS Template from w3schools: https://www.w3schools.com/w3css/tryw3css_templates_cv.htm
+    * __Please Note:__
+        The project does not have CSS stylesheet file since I use the online CSS template (framework) from w3schools. 
 
 * The snippets of Javascript code on how to generate random color is from: https://stackoverflow.com/questions/1484506/random-color-generator
 
