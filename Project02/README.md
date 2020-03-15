@@ -19,8 +19,6 @@
 
 ## Reference:
 * The HTML document for the resume used the following HTML and CSS Template from w3schools: https://www.w3schools.com/w3css/tryw3css_templates_cv.htm
-    * __Please Note:__
-        The project does not have CSS stylesheet file since I use the online CSS template (framework) from w3schools. 
 
 * The snippets of Javascript code on how to generate random color is from: https://stackoverflow.com/questions/1484506/random-color-generator
 

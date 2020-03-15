@@ -65,7 +65,8 @@ $(document).ready(function(){
         alert("Please don't hit me :( or I will disturb you by popping up this alert message.");
     });
 
-    $("#programName").click (function () {
-        $(this).animate({width: '+=150px'} ,'slow');
-    });
+    function growWidth (){
+        $(this).animate ({width: "+=50px"}, "fast");
+    }
+    $("#programName").click (growWidth());
 });
