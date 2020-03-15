@@ -64,9 +64,4 @@ $(document).ready(function(){
     $("img").dblclick(function(){
         alert("Please don't hit me :( or I will disturb you by popping up this alert message.");
     });
-
-    function growWidth (){
-        $(this).animate ({width: "+=50px"}, "fast");
-    }
-    $("#programName").click (growWidth());
 });
