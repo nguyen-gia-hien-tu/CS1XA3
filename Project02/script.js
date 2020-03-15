@@ -62,7 +62,10 @@ $(document).ready(function(){
 
     // Alert when double click on the avatar
     $("img").dblclick(function(){
-        alert("Please don't hit me :( or I will disturb you by popping up this alert.");
+        alert("Please don't hit me :( or I will disturb you by popping up this alert message.");
+    });
+
+    $("#programName").click (function () {
+        $(this).animate({width: '+=150px'} ,'slow');
     });
 });
-
