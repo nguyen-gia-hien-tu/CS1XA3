@@ -1,7 +1,7 @@
 # CS1XA3 Project02 - tun1
 
 ## Overview
- This webpage is tun1's custom resume
+ This webpage is __tun1__'s custom resume
 
 ## Custom Javascript Code 
 
@@ -11,6 +11,7 @@
 
 * __Feature 2:__
     * Click on the words __NGUYEN GIA HIEN TU__, __SKILLS__, __AWARDS__, __EDUCATION__, __EXTRACURRICULAR ACTIVITIES__ to minimize/maximize the content of each corresponding section using different types of "toggling" animations
+
 * __Feature 3:__
     * The webpage automatically loops over the images (avatars) after a few seconds
 
@@ -19,6 +20,7 @@
 
 ## Reference:
 * The HTML document for the resume used the following HTML and CSS Template from w3schools: https://www.w3schools.com/w3css/tryw3css_templates_cv.htm
+    * __Note:__ Since I use CSS template from w3schools, there is nothing much in my CSS file
 
 * The snippets of Javascript code on how to generate random color is from: https://stackoverflow.com/questions/1484506/random-color-generator
 
