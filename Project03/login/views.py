@@ -63,21 +63,21 @@ def signup_view(request):
     # TODO Objective 1: implement signup view
     form = UserCreationForm()
     failed = request.session.get('create_failed', False)
-    context = { 'signup_form' : form 
+    context = { 'signup_form' : form
                 , 'create_failed' : failed }
 
     return render(request,'signup.djhtml', context)
 
 def user_create_view(request):
-  if request.method == 'POST':
-    form = UserCreationForm(request.POST)
-    if form.is_valid():
-        form.save()
-        username = form.cleaned_data.get('username')
-        raw_password = form.cleaned_data.get('password1')
-        user = authenticate(username=username, password=raw_password)
-        login(request, user)
-        return redirect('social:messages_view')
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+	if form.is_valid():
+		form.save()
+		username = form.cleaned_data.get('username')
+		raw_password = form.cleaned_data.get('password1')
+		user = models.UserInfo.objects.create_user_info(username=username, password=password)
+		login(request, user)
+		return redirect('social:messages_view')
 
-  request.session['create_failed'] = True
-  return redirect('login:signup_view')
+	request.session['create_failed'] = True
+	return redirect('login:signup_view')
