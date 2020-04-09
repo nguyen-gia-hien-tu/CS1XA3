@@ -69,15 +69,15 @@ def signup_view(request):
     return render(request,'signup.djhtml', context)
 
 def user_create_view(request):
-	if request.method == 'POST':
-		form = UserCreationForm(request.POST)
-	if form.is_valid():
-		form.save()
-		username = form.cleaned_data.get('username')
-		raw_password = form.cleaned_data.get('password1')
-		user = authenticate(username=username, password=raw_password)
-		login(request, user)
-		return redirect('social:messages_view')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('social:messages_view')
 
-	request.session['create_failed'] = True
-	return redirect('login:signup_view')
+    request.session['create_failed'] = True
+    return redirect('login:signup_view')
