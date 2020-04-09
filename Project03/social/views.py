@@ -47,7 +47,11 @@ def account_view(request):
                         (if handled in this view)
     """
     if request.user.is_authenticated:
-        form = None
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            return redirect('login:login_view')
 
         # TODO Objective 3: Create Forms and Handle POST to Update UserInfo / Password
 
