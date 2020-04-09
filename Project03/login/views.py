@@ -75,7 +75,7 @@ def user_create_view(request):
 		form.save()
 		username = form.cleaned_data.get('username')
 		raw_password = form.cleaned_data.get('password1')
-		user = models.UserInfo.objects.create_user_info(username=username, password=password)
+		user = authenticate(username=username, password=raw_password)
 		login(request, user)
 		return redirect('social:messages_view')
 
