@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, Pass
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib import messages
 
-from . import models
+from . import models, forms
 
 def messages_view(request):
     """Private Page Only an Authorized User Can View, renders messages page
@@ -48,25 +48,48 @@ def account_view(request):
     """
         # TODO Objective 3: Create Forms and Handle POST to Update UserInfo / Password
     if request.user.is_authenticated:
+        user_info = models.UserInfo.objects.get(user=request.user)
 
         # Password Change Form
         if request.method == "POST":
-            form = PasswordChangeForm(request.user, request.POST)
-            if form.is_valid():
-                user = form.save()
+            change_pass_form = PasswordChangeForm(request.user, request.POST)
+            if change_pass_form.is_valid():
+                user = change_pass_form.save()
                 update_session_auth_hash(request, user)
                 return redirect('login:login_view')
         else:
             change_pass_form = PasswordChangeForm(request.user)
 
-
-        user_info = models.UserInfo.objects.get(user=request.user)
+        # Employment Update
+        user_info_update_form = forms.UpdateForm()
+    
         context = { 'user_info' : user_info,
-                    'change_pass_form' : change_pass_form }
+                    'change_pass_form' : change_pass_form,
+                    'user_info_update_form' : user_info_update_form
+                }
         return render(request,'account.djhtml',context)
 
     request.session['failed'] = True
     return redirect('login:login_view')
+
+def update_view(request):
+    user_info = models.UserInfo.objects.get(user=request.user)
+
+    # Update user information
+    if request.method == "POST":
+        user_info_update_form = forms.UpdateForm(request.POST)
+        if user_info_update_form.is_valid():
+            employment = user_info_update_form.cleaned_data['employment']
+            location = user_info_update_form.cleaned_data['location']
+            birthday = user_info_update_form.cleaned_data['birthday']
+            #new_interest = user_info_update_form.cleaned_data['interests']
+            user_info.employment = employment
+            user_info.location = location
+            user_info.birthday = birthday
+            #user_info.interests.add(new_interest)
+            print(user_info.birthday)
+            user_info.save()
+            return redirect('social:messages_view')
 
 def people_view(request):
     """Private Page Only an Authorized User Can View, renders people page
