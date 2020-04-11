@@ -56,6 +56,7 @@ def account_view(request):
             if change_pass_form.is_valid():
                 user = change_pass_form.save()
                 update_session_auth_hash(request, user)
+                logout(request)
                 return redirect('login:login_view')
         else:
             change_pass_form = PasswordChangeForm(request.user)
@@ -105,12 +106,17 @@ def people_view(request):
         user_info = models.UserInfo.objects.get(user=request.user)
         # TODO Objective 4: create a list of all users who aren't friends to the current user (and limit size)
         all_people = []
+        for user in models.UserInfo.objects.all():
+            if not user in user_info.friends.all() and user != user_info:
+                all_people.append(user)
+
+        all_people_display = all_people[:request.session.get('counter')]
 
         # TODO Objective 5: create a list of all friend requests to current user
         friend_requests = []
 
         context = { 'user_info' : user_info,
-                    'all_people' : all_people,
+                    'all_people' : all_people_display,
                     'friend_requests' : friend_requests }
 
         return render(request,'people.djhtml',context)
@@ -186,7 +192,7 @@ def more_post_view(request):
    	  out : (HttpResponse) - should return an empty HttpResponse after updating hte num_posts sessions variable
     '''
     if request.user.is_authenticated:
-        # update the # of posts dispalyed
+        # update the # of posts displayed
 
         # TODO Objective 9: update how many posts are displayed/returned by messages_view
 
@@ -206,10 +212,11 @@ def more_ppl_view(request):
    	  out : (HttpResponse) - should return an empty HttpResponse after updating the num ppl sessions variable
     '''
     if request.user.is_authenticated:
-        # update the # of people dispalyed
+        # update the # of people displayed
 
         # TODO Objective 4: increment session variable for keeping track of num ppl displayed
-
+        i = request.session.get('counter', 0)
+        request.session['counter'] = i+1
         # return status='success'
         return HttpResponse()
 

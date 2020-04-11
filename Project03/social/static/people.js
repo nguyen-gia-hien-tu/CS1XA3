@@ -47,7 +47,7 @@ function submitMorePpl(event) {
 
     // AJAX post
     $.post(url_path,
-           json_data,
+           json_data,   
            morePplResponse);
 }
 

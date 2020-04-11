@@ -45,7 +45,7 @@ def logout_view(request):
       out: (HttpResponse) - perform User logout and redirects to login_view
     """
     # TODO Objective 4 and 9: reset sessions variables
-
+    request.session['counter'] = 0
     # logout user
     logout(request)
 
