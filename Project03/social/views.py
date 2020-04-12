@@ -106,8 +106,7 @@ def people_view(request):
         # TODO Objective 4: create a list of all users who aren't friends to the current user (and limit size)
         all_people = list(models.UserInfo.objects.exclude(friends=user_info).exclude(user__username=user_info.user.username))
 
-        num_ppl_displayed = request.session.get('counter', 1)
-        all_people_display = all_people[:num_ppl_displayed]
+        all_people_display = all_people[:request.session.get('counter', 1)]
 
         # TODO Objective 5: create a list of all friend requests to current user
         friend_requests = []
