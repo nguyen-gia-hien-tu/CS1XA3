@@ -61,7 +61,7 @@ def account_view(request):
         else:
             change_pass_form = PasswordChangeForm(request.user)
 
-        # Employment Update
+        # User Info Update
         user_info_update_form = forms.UpdateForm()
     
         context = { 'user_info' : user_info,
@@ -83,12 +83,11 @@ def update_view(request):
             employment = user_info_update_form.cleaned_data['employment']
             location = user_info_update_form.cleaned_data['location']
             birthday = user_info_update_form.cleaned_data['birthday']
-            #new_interest = user_info_update_form.cleaned_data['interests']
+            new_interest = user_info_update_form.cleaned_data['interests']
             user_info.employment = employment
             user_info.location = location
             user_info.birthday = birthday
-            #user_info.interests.add(new_interest)
-            print(user_info.birthday)
+            user_info.interests.add(new_interest)
             user_info.save()
             return redirect('social:messages_view')
 
