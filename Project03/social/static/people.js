@@ -14,9 +14,10 @@ function frResponse(data,status) {
 
 function friendRequest(event) {
     // the id of the current button, should be fr-name where name is valid username
-    let frID = event.target.id;
+    let frID = event.target.id;     // frID is a string
     let json_data = { 'frID' : frID };
-    // globally defined in messages.djhtml using i{% url 'social:like_view' %}
+
+    // globally defined in messages.djhtml using i{% url 'social:friend_request_view' %}
     let url_path = friend_request_url;
 
     // AJAX post

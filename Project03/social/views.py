@@ -109,7 +109,7 @@ def people_view(request):
         all_people_display = all_people[:request.session.get('counter', 1)]
 
         # TODO Objective 5: create a list of all friend requests to current user
-        friend_requests = []
+        friend_requests = list(models.FriendRequest.objects.filter(to_user=user_info))
 
         context = { 'user_info' : user_info,
                     'all_people' : all_people_display,
@@ -238,7 +238,9 @@ def friend_request_view(request):
 
         if request.user.is_authenticated:
             # TODO Objective 5: add new entry to FriendRequest
-
+            current_user = models.UserInfo.objects.get(user=request.user)
+            fr_requested_user = models.UserInfo.objects.get(user__username=username)
+            models.FriendRequest.objects.create(to_user=fr_requested_user, from_user=current_user)
             # return status='success'
             return HttpResponse()
         else:

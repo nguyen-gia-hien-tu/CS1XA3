@@ -14,7 +14,7 @@
             <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>       <!--TODO Add Location-->{{ people.location }}</p>
             <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>        <!--TODO Add Birthday-->{{ people.birthday }}</p>
                 <!--        TODO Objective 5: make id unique to username and disable button if friend request already sent -->
-                <button type="button" id="fr-USERNAME" class="w3-button w3-theme-d1 w3-margin-bottom fr-button">Friend Request</button>
+                <button type="button" id="fr-{{ people.user.username }}" class="w3-button w3-theme-d1 w3-margin-bottom fr-button">Friend Request</button>
         </div>
     {% endfor %}
     <div class="w3-container">
@@ -24,6 +24,7 @@
 
 {% block right_column %}
     <!--           TODO Objective 5: Use friend_requests list to render friend requests to user -->
+    {% for friend in friend_requests %}
       <div class="w3-card w3-round w3-white w3-center">
         <div class="w3-container">
           <p>Friend Request</p>
@@ -45,6 +46,7 @@
         </div>
       </div>
       <br>
+    {% endfor %}
 {% endblock %}
 
 {% block script %}

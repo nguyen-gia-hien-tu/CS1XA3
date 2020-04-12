@@ -56,7 +56,6 @@
      like_post_url = "{% url 'social:like_view' %}";
      post_submit_url = "{% url 'social:post_submit_view' %}";
      more_post_url = "{% url 'social:more_post_view' %}";
-     more_ppl_url = "{% url 'social:more_ppl_view' %}";
     </script>
     <script src="{% static 'messages.js' %}"></script>
 {% endblock %}
