@@ -30,7 +30,7 @@
           <p>Friend Request</p>
           {% load static %}
           <img src="{% static 'avatar.png'  %}" alt="Avatar" style="width:50%"><br>
-          <span><!--         TODO Add Username-->{{ fr_request.user.usename }}</span>
+          <span><!--         TODO Add Username-->{{ fr_request.from_user.user.username }}</span>
           <div class="w3-row w3-opacity">
             <div class="w3-half">
                 <!--           TODO Objective 6: make id specific to user who sent request -->
