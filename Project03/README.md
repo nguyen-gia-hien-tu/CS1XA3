@@ -34,3 +34,6 @@
     * The page displays the list of people who are not friends with the current logged in user
     * The page starts out by displaying 1 people, then displays 1 more people by clicking the __More__ button
     * The __More__ button sends a POST request to `more_ppl_view` function to add 1 more person to list of people will be displayed
+
+## Objective 05:
+* __Description__:

@@ -165,11 +165,13 @@ def post_submit_view(request):
                              or 404 if any error occurs
     '''
     postContent = request.POST.get('postContent')
+    print(postContent)
     if postContent is not None:
         if request.user.is_authenticated:
 
             # TODO Objective 8: Add a new entry to the Post model
-
+            user_info = models.UserInfo.objects.get(user=request.user)
+            models.Post.objects.create(owner=user_info, content=postContent)
             # return status='success'
             return HttpResponse()
         else:
