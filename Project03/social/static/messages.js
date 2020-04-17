@@ -28,9 +28,20 @@ function submitPost(event) {
    | Handle Liking Posts - called by $('.like-button').click(submitLike)
    ********************************************************************************************
    */
+function submitLikeResponse(data, status) {
+    if (status == 'success'){
+        location.reload();
+    }
+    else{
+        alert("failed to like post " + status);
+    }
+}
+
 function submitLike(event) {
     alert('Like Button Pressed');
     // TODO Objective 10: send post-n id via AJAX POST to like_view (reload page upon success)
+    let postIDReq = event.target.id;
+
 }
 
 /* ********************************************************************************************

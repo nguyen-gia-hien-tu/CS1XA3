@@ -21,12 +21,13 @@ def messages_view(request):
 
 
         # TODO Objective 9: query for posts (HINT only return posts needed to be displayed)
-        posts = []
+        posts = models.Post.objects.all().order_by('-timestamp')
+        posts_displayed = posts[:request.session.get('post_counter', 1)]
 
         # TODO Objective 10: check if user has like post, attach as a new attribute to each post
 
         context = { 'user_info' : user_info
-                  , 'posts' : posts }
+                  , 'posts' : posts_displayed }
         return render(request,'messages.djhtml',context)
 
     request.session['failed'] = True
@@ -198,6 +199,8 @@ def more_post_view(request):
         # update the # of posts displayed
 
         # TODO Objective 9: update how many posts are displayed/returned by messages_view
+        count = request.session.get('post_counter', 1)
+        request.session['post_counter'] = count+2
 
         # return status='success'
         return HttpResponse()
@@ -248,6 +251,7 @@ def friend_request_view(request):
             current_user = models.UserInfo.objects.get(user=request.user)
             fr_requested_user = models.UserInfo.objects.get(user__username=username)
             models.FriendRequest.objects.create(to_user=fr_requested_user, from_user=current_user)
+            
             # return status='success'
             return HttpResponse()
         else:

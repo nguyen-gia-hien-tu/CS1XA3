@@ -33,7 +33,8 @@
     * This feature is displayed in <span style="color:blue">people.djhtml</span> which is redered by <span style="color:#ff4433">__people_view__</span> function
     * The page displays the list of people who are not friends with the current logged in user
     * The page starts out by displaying 1 people, then displays 1 more people by clicking the __More__ button
-    * The __More__ button sends a POST request to <span style="color:#ff4433">__more_ppl_view__</span> function to add 1 more person to list of people will be displayed
+    * The __More__ button sends a POST request to <span style="color:#ff4433">__more_ppl_view__</span> function to add 1 more person to list of people will be displayed by keeping track of the number of people using a session variable name __`counter`__ and updating that session variable 
+    * The number of people being displayed will be reset to 1 when the uer logs out by resetting the session variable in <span style="color:#ff4433">__logout_view__</span> in `login/views.py`
 
 ## Objective 05:
 * __Description:__
@@ -64,3 +65,11 @@
     * Pushing the `Post` button sends the content in the "Thoughts" (above the `Post` button) to `social:post_submit_view` which is handled by <span style="color:#ff4433">__post_submit_view__</span> function through AJAX POST request
     * The page will be reloaded upon a success response
     * The <span style="color:#ff4433">__post_submit_view__</span> function will handle the POST request and create a new __Post__ model object in the database
+
+## Objective 09:
+* __Description:__
+    * The feature is displayed in <span style="color:blue">messages.djhtml</span> which is rendered by <span style="color:#ff4433">__messages_view__<span> function
+    * The <span style="color:#ff4433">__messages_view__</span> function will query for posts and sort them from newest to oldest by __timestamp__
+    * The page starts out by displaying 1 post and display 2 more posts each time the `More` button is clicked
+    * Clicking the `More` button will send a POST request to <span style="color:#ff4433">__more_post_view__</span> function to add 2 more posts to list of posts will be displayed by keeping track of the number of posts using a session variable name __`post_counter`__ and updating that session variable 
+    * The number of post being displayed will be rest to 1 when the user logs out by resetting the session variable in <span style="color:#ff4433">__logout_view__</span> in `login/views.py`
