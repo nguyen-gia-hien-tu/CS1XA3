@@ -19,7 +19,6 @@ def messages_view(request):
     if request.user.is_authenticated:
         user_info = models.UserInfo.objects.get(user=request.user)
 
-
         # TODO Objective 9: query for posts (HINT only return posts needed to be displayed)
         posts = models.Post.objects.all().order_by('-timestamp')
         posts_displayed = posts[:request.session.get('post_counter', 1)]
@@ -146,10 +145,18 @@ def like_view(request):
     if postIDReq is not None:
         # remove 'post-' from postID and convert to int
         # TODO Objective 10: parse post id from postIDReq
-        postID = 0
+        postID = int(postIDReq[5:])
 
         if request.user.is_authenticated:
             # TODO Objective 10: update Post model entry to add user to likes field
+
+            # get the current user object
+            user_info = models.UserInfo.objects.get(user=request.user)
+
+            # get the Post object with the corresponding id
+            post = models.Post.objects.get(id=postID)
+            # add current user to the list of people who likes the post
+            post.likes.add(user_info)
 
             # return status='success'
             return HttpResponse()
@@ -251,7 +258,7 @@ def friend_request_view(request):
             current_user = models.UserInfo.objects.get(user=request.user)
             fr_requested_user = models.UserInfo.objects.get(user__username=username)
             models.FriendRequest.objects.create(to_user=fr_requested_user, from_user=current_user)
-            
+
             # return status='success'
             return HttpResponse()
         else:

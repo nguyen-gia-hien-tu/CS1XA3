@@ -38,9 +38,16 @@ function submitLikeResponse(data, status) {
 }
 
 function submitLike(event) {
-    alert('Like Button Pressed');
+    // alert('Like Button Pressed');
     // TODO Objective 10: send post-n id via AJAX POST to like_view (reload page upon success)
-    let postIDReq = event.target.id;
+    let postID = event.target.id;
+    let json_data = { 'postID' : postID }
+
+    let url_path = like_post_url;
+
+    $.post(url_path,
+            json_data,
+            submitLikeResponse)
 
 }
 
