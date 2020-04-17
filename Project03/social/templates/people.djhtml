@@ -14,7 +14,7 @@
             <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>       <!--TODO Add Location-->{{ people.location }}</p>
             <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>        <!--TODO Add Birthday-->{{ people.birthday }}</p>
                 <!--        TODO Objective 5: make id unique to username and disable button if friend request already sent -->
-                <button onclick="updateState(this)" type="button" id="fr-{{ people.user.username }}" class="w3-button w3-theme-d1 w3-margin-bottom fr-button">Friend Request</button>
+                <button type="button" id="fr-{{ people.user.username }}" class="w3-button w3-theme-d1 w3-margin-bottom fr-button">Friend Request</button>
         </div>
     {% endfor %}
     <div class="w3-container">

@@ -26,10 +26,6 @@ function friendRequest(event) {
            frResponse);
 }
 
-function updateState(context){
-    context.setAttrbute('disable', true)        // disable button after being clicked
-}
-
 /* ********************************************************************************************
    | Handle Requesting More People - called by $('#more-ppl-button').click(submitMorePpl)
    ********************************************************************************************
