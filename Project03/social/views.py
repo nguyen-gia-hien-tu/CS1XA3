@@ -107,18 +107,24 @@ def people_view(request):
         all_people = list(models.UserInfo.objects.exclude(friends=user_info).exclude(user__username=user_info.user.username))
 
         # delete users that are requested to be friend from the current logged in user from the list
-        for fr_req in models.FriendRequest.objects.filter(from_user=user_info):
-            all_people.remove(fr_req.to_user)
+        # for fr_req in models.FriendRequest.objects.filter(from_user=user_info):
+        #     all_people.remove(fr_req.to_user)
 
         all_people_display = all_people[:request.session.get('counter', 1)]
 
+        # create a list of all people whom the current logged in user sent friend request to (for Objective 5)
+        friend_requests_from_user_info = []
+        fr_requests_from_user_info = models.FriendRequest.objects.filter(from_user=user_info)
+        for fr_req in fr_requests_from_user_info:
+            friend_requests_from_user_info.append(fr_req.to_user)
 
         # TODO Objective 5: create a list of all friend requests to current user
         friend_requests = list(models.FriendRequest.objects.filter(to_user=user_info))
 
         context = { 'user_info' : user_info,
                     'all_people' : all_people_display,
-                    'friend_requests' : friend_requests }
+                    'friend_requests' : friend_requests,
+                    'friend_requests_from_user_info' : friend_requests_from_user_info }
 
         return render(request,'people.djhtml',context)
 
@@ -251,12 +257,12 @@ def friend_request_view(request):
     frID = request.POST.get('frID')
     if frID is not None:
         # remove 'fr-' from frID
-        username = frID[3:]
+        fr_requested_id = int(frID[3:])
 
         if request.user.is_authenticated:
             # TODO Objective 5: add new entry to FriendRequest
             current_user = models.UserInfo.objects.get(user=request.user)
-            fr_requested_user = models.UserInfo.objects.get(user__username=username)
+            fr_requested_user = models.UserInfo.objects.get(user__id=fr_requested_id)
             models.FriendRequest.objects.create(to_user=fr_requested_user, from_user=current_user)
 
             # return status='success'
