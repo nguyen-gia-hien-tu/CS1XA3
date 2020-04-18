@@ -42,9 +42,7 @@
     * The middle column is a list of "strangers" (people who are not friends with current logged in user)
     * All `FRIEND REQUEST` button are linked to a jQuery event with the class name of `.fr-button` to send a POST request to `social:friend_request_view` which is handled by the function <span style="color:#ff4433">__friend_request_view__</span>
     * The function <span style="color:#ff4433">__friend_request_view__</span> will handle the POST request and insert a new entry to the <span style="color:red">FriendRequest</span> model
-    * After the current logged in user clicks the __FRIEND REQUEST__ button to send a friend request to a specific user, that specific user will disappear from the list of "strangers" (not being shown on the list of strangers)
-    * The action is handled in <span style="color:#ff4433">__people_view__</span> function by deleting that specific user from the list of "strangers" in the database
-    * The right column of the page is a list of people who sent the friend requests to the current logged in user
+    * After the current logged in user clicks the __FRIEND REQUEST__ button to send a friend request to a specific user, that __FRIEND REQUEST__ button will be disabled
 
 ## Objective 06:
 * __Description:__
@@ -73,3 +71,11 @@
     * The page starts out by displaying 1 post and display 2 more posts each time the `More` button is clicked
     * Clicking the `More` button will send a POST request to <span style="color:#ff4433">__more_post_view__</span> function to add 2 more posts to list of posts will be displayed by keeping track of the number of posts using a session variable name __`post_counter`__ and updating that session variable 
     * The number of post being displayed will be rest to 1 when the user logs out by resetting the session variable in <span style="color:#ff4433">__logout_view__</span> in `login/views.py`
+
+## Objective 10
+* __Description:__
+    * The feature is displayed in <span style="color:blue">messages.djhtml</span> which is rendered by <span style="color:#ff4433">__messages_view__</span> function
+    * The feature allows the user to like the posts and display real life count
+    * Pushing the __Like__ button will send a POST request to `social:like-view` which is handled by <span style="color:#ff4433">__like_view__</span> function
+    * The <span style="color:#ff4433">__like_view__</span> function adds the current user to the list of people who likes the post
+    * The feature will also prevent the user from double-liking a post by disabling the __Like__ button
