@@ -257,12 +257,12 @@ def friend_request_view(request):
     frID = request.POST.get('frID')
     if frID is not None:
         # remove 'fr-' from frID
-        fr_requested_id = int(frID[3:])
+        fr_requested_username = frID[3:]
 
         if request.user.is_authenticated:
             # TODO Objective 5: add new entry to FriendRequest
             current_user = models.UserInfo.objects.get(user=request.user)
-            fr_requested_user = models.UserInfo.objects.get(user__id=fr_requested_id)
+            fr_requested_user = models.UserInfo.objects.get(user__username=fr_requested_username)
             models.FriendRequest.objects.create(to_user=fr_requested_user, from_user=current_user)
 
             # return status='success'

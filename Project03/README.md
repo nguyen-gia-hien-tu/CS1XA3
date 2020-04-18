@@ -6,7 +6,7 @@
 * Run locally with `python manage.py localhost:8000` 
 * Run on mac1xa3.ca server with `python manage.py localhost:100192`
 
-* Log in with TestUser, password 1234
+* Log in with `TestUser`, password `1234`
 
 ## Objective 01
 * __Description:__
@@ -66,7 +66,7 @@
 
 ## Objective 09:
 * __Description:__
-    * The feature is displayed in <span style="color:blue">messages.djhtml</span> which is rendered by <span style="color:#ff4433">__messages_view__<span> function
+    * The feature is displayed in <span style="color:blue">messages.djhtml</span> which is rendered by <span style="color:#ff4433">__messages_view__</span> function
     * The <span style="color:#ff4433">__messages_view__</span> function will query for posts and sort them from newest to oldest by __timestamp__
     * The page starts out by displaying 1 post and display 2 more posts each time the `More` button is clicked
     * Clicking the `More` button will send a POST request to <span style="color:#ff4433">__more_post_view__</span> function to add 2 more posts to list of posts will be displayed by keeping track of the number of posts using a session variable name __`post_counter`__ and updating that session variable 
@@ -76,6 +76,6 @@
 * __Description:__
     * The feature is displayed in <span style="color:blue">messages.djhtml</span> which is rendered by <span style="color:#ff4433">__messages_view__</span> function
     * The feature allows the user to like the posts and display real life count
-    * Pushing the __Like__ button will send a POST request to `social:like-view` which is handled by <span style="color:#ff4433">__like_view__</span> function
+    * Pushing the `Like` button will send a POST request to `social:like_view` which is handled by <span style="color:#ff4433">__like_view__</span> function
     * The <span style="color:#ff4433">__like_view__</span> function adds the current user to the list of people who likes the post
     * The feature will also prevent the user from double-liking a post by disabling the __Like__ button
