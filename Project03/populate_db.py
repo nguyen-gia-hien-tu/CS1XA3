@@ -98,7 +98,7 @@ def populate():
     emerald.location = "Montreal, QB, Canada"
     emerald.birthday = datetime.date(1990, 8, 12)
     emerald.interests.add(baseball, basketball, bowling)
-    emerald.friends.add(denise, henry, jafar)
+    emerald.friends.add(denise, jafar)
     emerald.save()
 
     fang.employment = "Ethical Hacker"
@@ -119,7 +119,7 @@ def populate():
     henry.location = "Hamilton, ON, Canada"
     henry.birthday = datetime.date(2001, 6, 19)
     henry.interests.add(coding, watching, board_game)
-    henry.friends.add(india, fang, cathy, denise, emerald)
+    henry.friends.add(india, fang, cathy, denise)
     henry.save()
 
     india.employment = "Student"
@@ -158,3 +158,5 @@ def populate():
     fr_req_3 = models.FriendRequest.objects.create(to_user=general, from_user=denise)
     fr_req_4 = models.FriendRequest.objects.create(to_user=india, from_user=emerald)
     fr_req_5 = models.FriendRequest.objects.create(to_user=alex, from_user=bethany)
+    fr_req_6 = models.FriendRequest.objects.create(to_user=henry, from_user=emerald)
+    fr_req_7 = models.FriendRequest.objects.create(to_user=henry, from_user=bethany)
