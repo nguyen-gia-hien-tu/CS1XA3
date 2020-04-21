@@ -6,7 +6,7 @@
 * Run locally with `python manage.py localhost:8000` 
 * Run on mac1xa3.ca server with `python manage.py localhost:100192`
 
-* Log in with `TestUser`, password `1234`
+* Log in with `Henry Tu`, password `hIeenGiv#04o1`
 
 ## Objective 01
 * __Description:__
@@ -79,3 +79,12 @@
     * Pushing the `Like` button will send a POST request to `social:like_view` which is handled by <span style="color:#ff4433">__like_view__</span> function
     * The <span style="color:#ff4433">__like_view__</span> function adds the current user to the list of people who likes the post
     * The feature will also prevent the user from double-liking a post by disabling the __Like__ button
+
+## Objective 11
+* __Description:__
+    * The feature creates a variety of users, posts and likes, and different friend requests
+    * If, for some reasons, the original `db.sqlite3` file is lost, you can populate it back with the `populate_db.py` file by `cd` into the root project (i.e. `CS1XA3/Project03`) and type:<br></br>
+    <pre><code>$ python manage.py shell
+    >>> from populate_db import *  
+    >>> populate() 
+    </code></pre> 
