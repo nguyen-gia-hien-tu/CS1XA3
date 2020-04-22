@@ -14,6 +14,8 @@ def populate():
     models.UserInfo.objects.create_user_info(username="Henry Tu", password="hIeenGiv#04o1")
     models.UserInfo.objects.create_user_info(username="India Northway", password="inLin$04")
     models.UserInfo.objects.create_user_info(username="Jafar Evil", password="HahaHaaaaa$01")
+    
+    ## Accidentally created too many users and don't want to delete them :(((
     # models.UserInfo.objects.create_user_info(username="Kathy Zhao", password="zKaY&o57")
     # models.UserInfo.objects.create_user_info(username="Lindy Xin", password="XiN1La$")
     # models.UserInfo.objects.create_user_info(username="Mandy Wong", password="Doc$tranG3")
@@ -144,13 +146,19 @@ def populate():
     post2.likes.add(fang)
 
     post3 = models.Post.objects.create(owner=india, content="Wowwwww")
-    post3.likes.add(fang)
+    post3.likes.add(fang, india)
     
     post4 = models.Post.objects.create(owner=denise, content="Stay Healthy guys!!!")
     post4.likes.add(denise, fang, india, henry, alex, bethany, cathy, emerald)
     
     post5 = models.Post.objects.create(owner=cathy, content="Posting my first post")
     post5.likes.add(henry, fang, cathy, jafar)
+
+    post6 = models.Post.objects.create(owner=emerald, content="Hello There!")
+    post6.likes.add(emerald, cathy, bethany)
+
+    post7 = models.Post.objects.create(owner=general, content="Shoutout to all the front line workers out there!")
+    post7.likes.add(general, fang, cathy, bethany, henry, india)
 
     # Create FriendRequest table
     fr_req_1 = models.FriendRequest.objects.create(to_user=denise, from_user=jafar)

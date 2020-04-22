@@ -2,11 +2,13 @@
 
 ## Usage
 * Install conda environment with `conda create -n djangoenv python=3.7`
+* Activate the environment with `conda activate djangoenv`
+* Install django with the environment `conda install -c anaconda django`
 
 * Run locally with `python manage.py localhost:8000` 
 * Run on mac1xa3.ca server with `python manage.py localhost:100192`
 
-* Log in with `Henry Tu`, password `hIeenGiv#04o1`
+* Log in with `Henry Tu`, password `hIeenGiv#04o1` (you can see `populate_db.py` file for different usernames and passwords for different users)
 
 ## Objective 01
 * __Description:__
@@ -31,10 +33,10 @@
 ## Objective 04:
 * __Description:__
     * This feature is displayed in <span style="color:blue">people.djhtml</span> which is redered by <span style="color:#ff4433">__people_view__</span> function
-    * The page displays the list of people who are not friends with the current logged in user
-    * The page starts out by displaying 1 people, then displays 1 more people by clicking the __More__ button
+    * The page displays the list of people who are not friends with the current logged in user ("strangers")
+    * The page starts out by displaying __1__ people, then displays __1__ more people by clicking the __More__ button
     * The __More__ button sends a POST request to <span style="color:#ff4433">__more_ppl_view__</span> function to add 1 more person to list of people will be displayed by keeping track of the number of people using a session variable name __`counter`__ and updating that session variable 
-    * The number of people being displayed will be reset to 1 when the uer logs out by resetting the session variable in <span style="color:#ff4433">__logout_view__</span> in `login/views.py`
+    * The number of people being displayed will be reset to __1__ when the user logs out by resetting the session variable in <span style="color:#ff4433">__logout_view__</span> in `login/views.py`
 
 ## Objective 05:
 * __Description:__
@@ -68,9 +70,9 @@
 * __Description:__
     * The feature is displayed in <span style="color:blue">messages.djhtml</span> which is rendered by <span style="color:#ff4433">__messages_view__</span> function
     * The <span style="color:#ff4433">__messages_view__</span> function will query for posts and sort them from newest to oldest by __timestamp__
-    * The page starts out by displaying 1 post and display 2 more posts each time the `More` button is clicked
-    * Clicking the `More` button will send a POST request to <span style="color:#ff4433">__more_post_view__</span> function to add 2 more posts to list of posts will be displayed by keeping track of the number of posts using a session variable name __`post_counter`__ and updating that session variable 
-    * The number of post being displayed will be rest to 1 when the user logs out by resetting the session variable in <span style="color:#ff4433">__logout_view__</span> in `login/views.py`
+    * The page starts out by displaying __1__ post and display __2__ more posts each time the `More` button is clicked
+    * Clicking the `More` button will send a POST request to <span style="color:#ff4433">__more_post_view__</span> function to add __2__ more posts to list of posts will be displayed by keeping track of the number of posts using a session variable name __`post_counter`__ and updating that session variable 
+    * The number of post being displayed will be rest to __1__ when the user logs out by resetting the session variable in <span style="color:#ff4433">__logout_view__</span> in `login/views.py`
 
 ## Objective 10
 * __Description:__
@@ -83,7 +85,7 @@
 ## Objective 11
 * __Description:__
     * The feature creates a variety of users, posts and likes, and different friend requests
-    * If, for some reasons, the original `db.sqlite3` file is lost, you can populate it back with the `populate_db.py` file by `cd` into the root project (i.e. `CS1XA3/Project03`) and type:<br></br>
+    * If, for some reasons, the original `db.sqlite3` file is lost, you can populate it back with the `populate_db.py` file by `cd` into the project root (i.e. `CS1XA3/Project03`) and type:<br></br>
     <pre><code>$ python manage.py shell
     >>> from populate_db import *  
     >>> populate() 
