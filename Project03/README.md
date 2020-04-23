@@ -31,6 +31,7 @@
         * After changing the password, the user will be logged out and redirected to `login:login_view` (i.e. they have to login again)
     * For updating the user information, the form makes a POST request to `social:update_view` which is handled by <span style="color:#ff4433">__update_view__</span> function
         * After updating the user information, the user will be redirected to `social:message_view` (the main page after the user logs in)
+        * The form for updating user information is from `login/forms.py` file
 
 ## Objective 04:
 * __Description:__

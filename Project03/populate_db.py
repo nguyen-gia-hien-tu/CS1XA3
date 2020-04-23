@@ -3,7 +3,7 @@ from social import models
 import datetime
 
 def populate():
-    # Populate users table
+    # Populate UserInfo table
     models.UserInfo.objects.create_user_info(username="Alex Johnson", password="JAx#10o1")
     models.UserInfo.objects.create_user_info(username="Bethany Isokov", password="bEv$99oO")
     models.UserInfo.objects.create_user_info(username="Cathy Liang", password="litC!10")
