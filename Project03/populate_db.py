@@ -42,6 +42,7 @@ def populate():
     blogging      = models.Interest.objects.create(label="Blogging")
     bowling       = models.Interest.objects.create(label="Bowling")
     board_game    = models.Interest.objects.create(label="Board Game")
+    chess         = models.Interest.objects.create(label="Playing Chess")
     coding        = models.Interest.objects.create(label="Coding")
     collecting    = models.Interest.objects.create(label="Collecting")
     cooking       = models.Interest.objects.create(label="Cooking")
@@ -49,12 +50,14 @@ def populate():
     drawing       = models.Interest.objects.create(label="Drawing")
     eating        = models.Interest.objects.create(label="Eating")
     gaming        = models.Interest.objects.create(label="Playing Video Games")
+    gardening     = models.Interest.objects.create(label="Gardening")
+    gym           = models.Interest.objects.create(label="Gymnastic")    
     watching      = models.Interest.objects.create(label="Watching TV")
     netfilx       = models.Interest.objects.create(label="Netflix and Chill")
-    gym           = models.Interest.objects.create(label="Gymnastic")
     karate        = models.Interest.objects.create(label="Karate")
     reading       = models.Interest.objects.create(label="Reading")
     magic         = models.Interest.objects.create(label="Doing magic trick")
+    pokemon       = models.Interest.objects.create(label="Playing Pokemon Go")
 
     # Create UserInfo for some users
     alex = models.UserInfo.objects.get(user__username="Alex Johnson")
