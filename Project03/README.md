@@ -6,9 +6,11 @@
 * Install django with the environment `conda install -c anaconda django`
 
 * Run locally with `python manage.py localhost:8000` 
-* Run on mac1xa3.ca server with `python manage.py localhost:100192`
+* Run on mac1xa3.ca server with `python manage.py localhost:10105`
 
-* Log in with `Henry Tu`, password `hIeenGiv#04o1` (you can see `populate_db.py` file for different usernames and passwords for different users)
+* Log in with `Henry Tu`, password `hIeenGiv#04o1` (you can consult `populate_db.py` file for different usernames and passwords for different users)
+
+* For all the features, the user will be redirected to `login: login_view` if the user is not authenticated
 
 ## Objective 01
 * __Description:__
@@ -64,7 +66,7 @@
     * The feature is displayed in <span style="color:blue">messages.djhtml</span> which is rendered by <span style="color:#ff4433">__messages_view__</span> and <span style="color:#ff4433">__messages.js__</span>
     * Pushing the `Post` button sends the content in the "Thoughts" (above the `Post` button) to `social:post_submit_view` which is handled by <span style="color:#ff4433">__post_submit_view__</span> function through AJAX POST request
     * The page will be reloaded upon a success response
-    * The <span style="color:#ff4433">__post_submit_view__</span> function will handle the POST request and create a new __Post__ model object in the database
+    * The <span style="color:#ff4433">__post_submit_view__</span> function will handle the POST request and create a new __Post__ model object in the database (the __timestamp__ for the model will be in UTC timezone)
 
 ## Objective 09:
 * __Description:__
@@ -90,3 +92,5 @@
     >>> from populate_db import *  
     >>> populate() 
     </code></pre> 
+    * __Note:__
+        Since I populate the database using `populate_db.py` file, the posts' timestamp will be the same as they are populated at the same time.
