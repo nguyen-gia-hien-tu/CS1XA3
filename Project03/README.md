@@ -8,7 +8,7 @@
 * Run locally with `python manage.py localhost:8000` 
 * Run on mac1xa3.ca server with `python manage.py localhost:10105`
 
-* Log in with `Henry Tu`, password `hIeenGiv#04o1` (you can consult `populate_db.py` file for different usernames and passwords for different users)
+* Log in with `Henry Tu`, password `hIeenGiv#04o1` (please consult `populate_db.py` file for different usernames and passwords for different users)
 
 * For all the features, the user will be redirected to `login: login_view` if the user is not authenticated
 
