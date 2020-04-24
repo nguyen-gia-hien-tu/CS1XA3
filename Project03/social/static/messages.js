@@ -14,7 +14,8 @@ function submitPostResponse(data, status){
 function submitPost(event) {
     // alert('Post Button Pressed');
     // TODO Objective 8: send contents of post-text via AJAX Post to post_submit_view (reload page upon success)
-    let postContent = $('#post-text').html();       // use jQuery to get the value of contentEditable text
+    let postContent = $('#post-text').text();   ;       // use jQuery to get the value of contentEditable text
+    console.log(postContent)
     let json_data = { 'postContent' : postContent };
 
     let url_path = post_submit_url;
