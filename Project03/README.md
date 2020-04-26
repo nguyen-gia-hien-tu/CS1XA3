@@ -32,6 +32,8 @@
     * For updating the user information, the form makes a POST request to `social:update_view` which is handled by <span style="color:#ff4433">__update_view__</span> function
         * After updating the user information, the user will be redirected to `social:message_view` (the main page after the user logs in)
         * The form for updating user information is from `login/forms.py` file
+        * The __Birthday__ field needs to be entered in the format `MM/DD/YYYY`
+        * The __Interests__ field is a "multiple choice" format
 
 ## Objective 04:
 * __Description:__
