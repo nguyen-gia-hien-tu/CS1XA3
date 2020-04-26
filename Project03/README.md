@@ -6,7 +6,7 @@
 * Install django with the environment `conda install -c anaconda django`
 
 * Run locally with `python manage.py localhost:8000` 
-* Run on mac1xa3.ca server with `python manage.py localhost:10105`
+* Run on mac1xa3.ca server with `python manage.py localhost:10105` and access the url `mac1xa3.ca/e/tun1/`
 
 * Log in with `Henry Tu`, password `hIeenGiv#04o1` (please consult `populate_db.py` file for different usernames and passwords for different users)
 
